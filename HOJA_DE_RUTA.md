@@ -81,19 +81,19 @@
 
 ---
 
-### Fase 3: Red Neuronal TensorFlow/Keras (`3_red_neuronal.py`) ⏳
+### Fase 3: Red Neuronal TensorFlow/Keras (`3_red_neuronal.py`) ✅
 - **Implementación:**
-  - [ ] Cargar los mismos archivos preprocesados desde `datos/`.
-  - [ ] Fijar `tf.keras.utils.set_random_seed(412)` **dentro** de `evaluar_red_neuronal(verbose=True)` para garantizar determinismo también al importarse desde `4_comparacion.py`.
-  - [ ] Definir modelo `Sequential` con capas ocultas `ReLU`, capa de salida `Dense(1, activation="linear")`, optimizador `Adam` y pérdida `mse`.
-  - [ ] Entrenar monitoreando `validation_split=0.2` (sin tocar `X_test`) y evaluando finalmente sobre `X_test`.
-  - [ ] Retornar exactamente las mismas llaves que `2_modelo_clasico.py` (`mse`, `rmse`, `mae`, `r2`, `y_pred`, `tiempo_entrenamiento`) y mantener `if __name__ == "__main__":`.
+  - [x] Cargar los mismos archivos preprocesados desde `datos/` convertidos a `float32`.
+  - [x] Fijar `tf.keras.utils.set_random_seed(412)` **dentro** de `evaluar_red_neuronal(verbose=True)` (y `enable_op_determinism()` en `entrenar_red_neuronal`) para garantizar determinismo también al importarse desde `4_comparacion.py`.
+  - [x] Definir modelo `Sequential`: `Input(100) -> Dense(64, ReLU, L2=0.01) -> Dropout(0.10) -> Dense(32, ReLU, L2=0.01) -> Dropout(0.10) -> Dense(1, linear)` (`8,577` parámetros), optimizador `Adam(lr=0.003)` y pérdida `mse`.
+  - [x] Entrenar monitoreando `validation_split=0.2` con `EarlyStopping(patience=20)` (sin tocar `X_test`): `72/200` épocas ejecutadas, mejor época `52`, tiempo `10.4251` s.
+  - [x] Retornar exactamente las mismas 11 llaves que `2_modelo_clasico.py` (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`) y mantener `if __name__ == "__main__":`.
 - **Tests obligatorios Fase 3:**
-  - [ ] Forma y rango válidos de salida (sin `NaN`).
-  - [ ] Convergencia real de la pérdida (`loss` / `val_loss`) durante las épocas.
-  - [ ] Determinismo exacto en dos llamadas consecutivas a `evaluar_red_neuronal(verbose=False)`.
-  - [ ] Superación del baseline ingenuo en Test.
-  - [ ] Compatibilidad verificada con entradas `float32`.
+  - [x] Forma, contrato de 11 llaves y rango válidos de salida (`shape=(287,)`, sin `NaN`/`Inf`, min `17.41`, mediana `77.13`, max `302.20` USD, `0` predicciones negativas).
+  - [x] Convergencia real sin `NaN`: `loss` baja de `10519.08` (época 1) a `701.66` (época 52); `val_loss` baja de `9301.32` a `876.19` (`val_mae = 18.59` USD).
+  - [x] Determinismo exacto en dos llamadas consecutivas a `evaluar_red_neuronal(verbose=False)` (`max(|y1 - y2|) = 0.00000000`).
+  - [x] Superación del baseline ingenuo (`R² = -0.0012`) y brecha controlada en Test: Train (`MSE = 661.96`, `RMSE = 25.73` USD, `MAE = 15.77` USD, `R² = 0.8248`) vs. Test (`MSE = 1145.8261`, `RMSE = 33.8501` USD, `MAE = 21.0231` USD, `R² = 0.7662`, brecha `+0.0586`).
+  - [x] Compatibilidad verificada con entradas `float32` e inferencia individual sobre muestra 0: real `195.00` USD vs. predicho `157.32` USD (error `-37.68` USD).
 
 ---
 
