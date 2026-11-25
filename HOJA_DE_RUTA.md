@@ -109,22 +109,22 @@
 
 ---
 
-### Fase 5: Documentación (`README.md`) y Revisión de Presentación ⏳
+### Fase 5: Documentación (`README.md`) y Presentación (`Presentacion_Taller_ML.pptx`) ✅
 - **Implementación:**
-  - [ ] Redactar `README.md` completo: pregunta de negocio, resumen y fuente del dataset, pipeline de preprocesamiento, arquitectura de modelos, instrucciones de ejecución con `uv`, resultados reales verificados y conclusión técnica.
-  - [ ] Auditar presentación `.pptx` o informe (si el usuario lo entrega) verificando consistencia exacta de cifras (`test` vs `val`) y cumplimiento al 100% de la rúbrica del PDF.
+  - [x] Redactar `README.md` completo: pregunta de negocio, auditoría del dataset, pipeline de preprocesamiento sin *leakage*, modelos clásico y neuronal, instalación con `uv`, resultados reales verificados y conclusión técnica.
+  - [x] Generar `Presentacion_Taller_ML.pptx` (10 diapositivas 16:9 con 4 gráficas reales de resultados, placeholders *Integrante A* / *Integrante B* y cobertura completa de la rúbrica PDF).
 - **Verificación:**
-  - [ ] Cero discrepancias entre los números de `README.md` / presentación y la salida real de `4_comparacion.py`.
+  - [x] Auditoría visual de las 4 gráficas y auditoría imparcial automatizada de `README.md` y `Presentacion_Taller_ML.pptx`: `10` diapositivas, `4` gráficas embebidas dentro del lienzo, `0` mezcla `val` vs. `test` y `0` discrepancias frente a `4_comparacion.py`.
 
 ---
 
 ### Fase 6: Empaquetado `.zip` + Prueba Limpia + Guía Maestra HTML ⏳
 - **Implementación:**
   - [ ] Verificar que haya `0` archivos `.ipynb` en todo el proyecto.
-  - [ ] Construir archivo `.zip` limpio con carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` e informe/presentación si aplica), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md` y `GUIA_SUSTENTACION.html`.
+  - [ ] Construir archivo `.zip` limpio con carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` y `Presentacion_Taller_ML.pptx`), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md`, `GUIA_SUSTENTACION.html` y el PDF de instrucciones si no corresponde.
   - [ ] Crear `GUIA_SUSTENTACION.html` autocontenida, didáctica e interactiva (con diagramas, guion para sustentación en pareja de 5–8 min con placeholders *Integrante A* / *Integrante B*, diccionario técnico y banco interactivo de preguntas de código y teoría).
   - [ ] Incluir explícitamente en `GUIA_SUSTENTACION.html` la justificación completa de selección del dataset (descarte del CSV previo sin precios, cumplimiento de la rúbrica PDF y prevención de *data leakage*) y el análisis imparcial de **Regresión Lineal Múltiple (`LinearRegression`) vs. Random Forest** (estructura aditiva, alta cardinalidad *one-hot*, interpretabilidad en USD, límites ante interacciones no lineales `marca × subcategoría` y contraste con la Red Neuronal).
-  - [ ] Explicar claramente en `GUIA_SUSTENTACION.html`: (a) por qué en un problema de **regresión** se usan `MSE`, `RMSE`, `MAE` y `R²` en lugar de `Accuracy`, `Precision`, `Recall` y `F1` (exclusivos de clasificación), y (b) por qué la Red Neuronal entrena por **épocas** (`1..72`) mediante descenso de gradiente (`Adam`) mientras `LinearRegression` resuelve en **1 paso analítico cerrado (SVD)** sin épocas y se analiza mediante curva de aprendizaje (`20%..100%`).
+  - [ ] Explicar en **lenguaje cotidiano muy sencillo** (además del técnico) en `GUIA_SUSTENTACION.html`: (a) por qué en **regresión** se usan `MSE`, `RMSE`, `MAE` y `R²` en lugar de `Accuracy`, `Precision`, `Recall` y `F1` (exclusivos de clasificación), y (b) por qué la Red Neuronal entrena por **épocas** (`1..72`) mediante descenso de gradiente (`Adam`) mientras `LinearRegression` resuelve en **1 paso analítico cerrado (SVD)** sin épocas y se analiza mediante curva de aprendizaje (`20%..100%`).
   - [ ] Actualizar `HOJA_DE_RUTA.md` y mantener historial de commits limpio en `main`.
 - **Verificación (Prueba limpia):**
   - [ ] Descomprimir el `.zip` en una carpeta temporal fuera del workspace y ejecutar `python 4_comparacion.py` desde cero verificando exit code `0` y resultados reproducibles.
