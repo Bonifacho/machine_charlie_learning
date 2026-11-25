@@ -118,13 +118,13 @@
 
 ---
 
-### Fase 6: Empaquetado `.zip` + Prueba Limpia + Guía Maestra HTML ⏳
+### Fase 6: Empaquetado `.zip` + Prueba Limpia + Guía Maestra HTML ✅
 - **Implementación:**
-  - [ ] Verificar que haya `0` archivos `.ipynb` en todo el proyecto.
-  - [ ] Construir archivo `.zip` limpio con carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` y `Presentacion_Taller_ML.pptx`), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md`, `GUIA_SUSTENTACION.html` y el PDF de instrucciones si no corresponde.
-  - [ ] Crear `GUIA_SUSTENTACION.html` autocontenida, didáctica e interactiva (con diagramas, guion para sustentación en pareja de 5–8 min con placeholders *Integrante A* / *Integrante B*, diccionario técnico y banco interactivo de preguntas de código y teoría).
-  - [ ] Incluir explícitamente en `GUIA_SUSTENTACION.html` la justificación completa de selección del dataset (descarte del CSV previo sin precios, cumplimiento de la rúbrica PDF y prevención de *data leakage*) y el análisis imparcial de **Regresión Lineal Múltiple (`LinearRegression`) vs. Random Forest** (estructura aditiva, alta cardinalidad *one-hot*, interpretabilidad en USD, límites ante interacciones no lineales `marca × subcategoría` y contraste con la Red Neuronal).
-  - [ ] Explicar en **lenguaje cotidiano muy sencillo** (además del técnico) en `GUIA_SUSTENTACION.html`: (a) por qué en **regresión** se usan `MSE`, `RMSE`, `MAE` y `R²` en lugar de `Accuracy`, `Precision`, `Recall` y `F1` (exclusivos de clasificación), y (b) por qué la Red Neuronal entrena por **épocas** (`1..72`) mediante descenso de gradiente (`Adam`) mientras `LinearRegression` resuelve en **1 paso analítico cerrado (SVD)** sin épocas y se analiza mediante curva de aprendizaje (`20%..100%`).
-  - [ ] Actualizar `HOJA_DE_RUTA.md` y mantener historial de commits limpio en `main`.
+  - [x] Verificado `0` archivos `.ipynb` en todo el proyecto.
+  - [x] Construido `proyecto_machine_learning.zip` (`698,694` bytes) bajo la carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los `12` entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` y `Presentacion_Taller_ML.pptx`), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md`, `GUIA_SUSTENTACION.html` y el PDF de instrucciones.
+  - [x] Creada `GUIA_SUSTENTACION.html` 100% autocontenida (0 enlaces externos), didáctica e interactiva (3 diagramas SVG, cronómetro de 5–8 min, barra de progreso en `localStorage`, guion en pareja con placeholders *Integrante A* / *Integrante B*, diccionario buscable de 22 términos y banco interactivo de 18 preguntas con filtros).
+  - [x] Incluida en `GUIA_SUSTENTACION.html` la justificación completa de selección del dataset (descarte del CSV previo sin precios, cumplimiento del PDF y prevención de *data leakage*) y el análisis imparcial de **Regresión Lineal Múltiple (`LinearRegression`) vs. Random Forest**.
+  - [x] Explicadas en **lenguaje cotidiano muy sencillo** (además del técnico) en `GUIA_SUSTENTACION.html`: (a) por qué en **regresión** se usan `MSE`, `RMSE`, `MAE` y `R²` en lugar de `Accuracy`, `Precision`, `Recall` y `F1`, y (b) por qué la Red Neuronal entrena por **épocas** (`1..72`) mediante descenso de gradiente (`Adam`) mientras `LinearRegression` resuelve en **1 paso analítico cerrado (SVD)** sin épocas y se analiza mediante curva de aprendizaje (`20%..100%`).
+  - [x] Actualizada `HOJA_DE_RUTA.md`, commit final en `main` y push a `origin/main` (`https://github.com/Bonifacho/machine_charlie_learning.git`).
 - **Verificación (Prueba limpia):**
-  - [ ] Descomprimir el `.zip` en una carpeta temporal fuera del workspace y ejecutar `python 4_comparacion.py` desde cero verificando exit code `0` y resultados reproducibles.
+  - [x] Descomprimido `proyecto_machine_learning.zip` en carpeta temporal externa (`%TEMP%\prueba_limpia_ml_*`), ejecutados `1_preprocesamiento.py` y `4_comparacion.py` desde cero con `exit code 0` y coincidencia exacta de métricas (`R²=0.7662` vs. `0.7297`), eliminando la carpeta temporal al finalizar.
