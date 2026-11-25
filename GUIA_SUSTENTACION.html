@@ -317,7 +317,7 @@
     <p>
       Material de estudio autocontenido para <strong>Integrante A</strong> e <strong>Integrante B</strong>:
       explicaciones cotidianas, defensa del dataset y del modelo clásico, arquitectura exacta, guion repartido (5–8 min),
-      diccionario buscable y banco interactivo de 18 preguntas del docente.
+      diccionario buscable y banco interactivo de 19 preguntas del docente.
     </p>
   </div>
 </header>
@@ -331,7 +331,7 @@
       <a href="#arquitectura">4. Modelos &amp; Métricas</a>
       <a href="#guion">5. Guion Pareja</a>
       <a href="#diccionario">6. Diccionario</a>
-      <a href="#preguntas">7. 18 Preguntas</a>
+      <a href="#preguntas">7. 19 Preguntas</a>
     </div>
     <span style="font-size:0.8rem;color:var(--muted);font-weight:600;">Demo en vivo: <code>4_comparacion.py</code></span>
   </div>
@@ -363,7 +363,7 @@
     <div class="panel">
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <strong style="font-size:0.92rem;color:var(--navy);">Progreso de Estudio (Banco de Preguntas)</strong>
-        <span id="progressText" style="font-weight:800;color:var(--accent);font-size:0.95rem;">0 / 18 dominadas</span>
+        <span id="progressText" style="font-weight:800;color:var(--accent);font-size:0.95rem;">0 / 19 dominadas</span>
       </div>
       <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.55rem;">
@@ -458,7 +458,7 @@
 
   <!-- SECCIÓN 2 -->
   <section id="aclaraciones">
-    <h2><span class="sec-num">2</span> Explicaciones Sencillas de los 2 Conceptos que Más Confunden</h2>
+    <h2><span class="sec-num">2</span> Explicaciones Sencillas de los 3 Conceptos que Más Confunden</h2>
     <div class="grid-2">
       <div class="panel">
         <div class="callout teal" style="margin-top:0;">
@@ -489,6 +489,22 @@
             <li><strong>Red Neuronal (Keras):</strong> tiene <strong>8,577 perillas</strong> (pesos) conectadas de forma no lineal, sin fórmula directa. Por eso aprende por ensayo y error: cada <strong>época</strong> repasa los datos y ajusta las perillas con <code>Adam</code>. En <code>4_comparacion.py</code> ves época 1 (<code>Val MSE=9301.32</code>) bajar hasta la <strong>mejor época 52</strong> (<code>Val MSE=876.19</code>, <code>Val MAE=$18.59</code>), deteniéndose en la época 72 por <code>EarlyStopping</code>.</li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:1rem;">
+      <div class="callout amber" style="margin:0;">
+        <h3>C) ¿Por qué la mejor época es la 52 si el entrenamiento corre hasta la 72? ¿Eso no genera overfitting?</h3>
+        <p style="margin:0.4rem 0;">
+          <strong>1. Primero, en lenguaje sencillo (analogía del corredor):</strong>
+          Imagina a un atleta entrenando para romper su mejor tiempo. En el intento <strong>52</strong> logra su récord personal. Como es normal tener altibajos (de hecho, en el intento 49 tuvo un día más lento antes de lograr el récord en el 52), el entrenador decide darle <strong>20 intentos extra de margen</strong> por si vuelve a romperlo. Al llegar al intento <strong>72</strong> sin superar la marca del 52, detiene la práctica y <strong>anota oficialmente la marca del intento 52</strong>, descartando los últimos 20 intentos flojos.
+        </p>
+        <p style="margin:0.45rem 0 0.35rem;"><strong>2. Después, en lenguaje técnico (lo que ocurre en <code>3_red_neuronal.py</code>):</strong></p>
+        <ul style="margin:0.2rem 0 0 1.15rem;padding:0;font-size:0.9rem;">
+          <li><strong>Criterio de selección (<code>val_loss</code>):</strong> <code>EarlyStopping(monitor="val_loss", patience=20, restore_best_weights=True)</code> y <code>mejor_epoca = int(np.argmin(val_loss_h)) + 1</code> eligen la época con el menor error en el 20% de validación interna: <strong>época 52</strong> (<code>Val MSE = 876.19</code>, <code>Val MAE = $18.59 USD</code>). No se guía por <code>Train MSE</code>, porque en Train el error sigue bajando (de <code>701.66</code> a <code>646.39</code> en la época 69) mientras en Validación empieza a subir (señal de inicio de memorización / <em>overfitting</em>).</li>
+          <li><strong>¿Por qué no paró justo en la 52 y corrió hasta la 72 (<code>52 + 20</code>)?</strong> Porque en la época 52 la red no conoce el futuro, y con <code>Adam</code> + <code>Dropout</code> la curva oscila (época 45: <code>881.01</code> → época 49: <code>923.75</code> → época 52: <code>876.19</code>). Si paráramos al primer rebote (<code>patience=1</code>), habría cortado prematuramente en la <strong>época 18</strong> (<code>Val MSE = 992.16</code>) perdiendo precisión.</li>
+          <li><strong>¿Entonces NO se queda con el <em>overfitting</em> de la época 72?</strong> <strong>Exacto, no se queda con él.</strong> Gracias a <code>restore_best_weights=True</code>, al frenar en la época 72 Keras descarta las épocas 53–72 y <strong>rebobina automáticamente los 8,577 pesos a los valores exactos de la época 52</strong> antes de evaluar <code>X_test</code> (evitando fijar <code>epochs=52</code> a mano).</li>
+        </ul>
       </div>
     </div>
 
@@ -709,9 +725,9 @@
 
   <!-- SECCIÓN 7 -->
   <section id="preguntas">
-    <h2><span class="sec-num">7</span> Banco Interactivo de Preguntas del Docente (18 Preguntas)</h2>
+    <h2><span class="sec-num">7</span> Banco Interactivo de Preguntas del Docente (19 Preguntas)</h2>
     <div class="filter-bar" id="qFilterBar">
-      <button class="filter-btn active" data-cat="Todas">Todas (18)</button>
+      <button class="filter-btn active" data-cat="Todas">Todas (19)</button>
       <button class="filter-btn" data-cat="Teoría y Métricas">Teoría y Métricas</button>
       <button class="filter-btn" data-cat="Datos y Preprocesamiento">Datos y Preprocesamiento</button>
       <button class="filter-btn" data-cat="Código y Arquitectura">Código y Arquitectura</button>
@@ -858,7 +874,8 @@
     { id: 15, cat: "Código y Arquitectura", q: "¿Por qué 4_comparacion.py usa importlib.import_module?", r30: "Porque en Python los nombres de archivo que empiezan por dígito (2_modelo_clasico.py) son inválidos en un import normal.", tech: "El taller exige nomenclatura numérica 1_ a 4_; importlib.import_module('2_modelo_clasico') cumple la estructura exacta sin renombrar scripts." },
     { id: 16, cat: "Negocio y Comparativa", q: "¿Por qué ganó la Red Neuronal MLP si la Regresión Lineal ya era buena?", r30: "Porque el precio en perfumería no es solo suma lineal: el impacto de cambiar de formato depende de la marca, y las capas ReLU capturan esas interacciones.", tech: "El MLP redujo el MAE en -$3.74 USD (-15.09%), bajó el MSE en -13.53%, subió el R² de 0.7297 a 0.7662 y eliminó las 8 predicciones negativas que produjo LinearRegression." },
     { id: 17, cat: "Negocio y Comparativa", q: "¿Por qué la Regresión Lineal predijo precios negativos en 8 productos?", r30: "Porque es una recta sin piso mínimo: si se juntan coeficientes muy negativos de marca económica + tipo de variación, la suma cae debajo de cero.", tech: "El mínimo predicho por OLS fue -$9.88 USD. En cambio, la combinación no lineal del MLP predijo siempre precios coherentes entre $17.41 y $302.20 USD." },
-    { id: 18, cat: "Negocio y Comparativa", q: "Si tuvieran que elegir un modelo para producción mañana, ¿cuál usarían y qué mejorarían?", r30: "Usaríamos la Red Neuronal para cotizar precios con mayor precisión y la Regresión Lineal para explicar a gerencia cuánto aporta cada marca; mejoraríamos extrayendo el volumen en mL/oz.", tech: "Añadir el volumen numérico extraído de 'size' y aplicar log(loves_count) resolvería la principal fuente de error restante entre tamaños de frasco de una misma línea." }
+    { id: 18, cat: "Negocio y Comparativa", q: "Si tuvieran que elegir un modelo para producción mañana, ¿cuál usarían y qué mejorarían?", r30: "Usaríamos la Red Neuronal para cotizar precios con mayor precisión y la Regresión Lineal para explicar a gerencia cuánto aporta cada marca; mejoraríamos extrayendo el volumen en mL/oz.", tech: "Añadir el volumen numérico extraído de 'size' y aplicar log(loves_count) resolvería la principal fuente de error restante entre tamaños de frasco de una misma línea." },
+    { id: 19, cat: "Código y Arquitectura", q: "Si la mejor época fue la 52, ¿por qué siguió entrenando hasta la 72? ¿No se quedó con el overfitting de la época 72?", r30: "La época 52 tuvo el menor val_loss (876.19); EarlyStopping esperó 20 épocas (patience=20) hasta la 72 por si volvía a mejorar y restore_best_weights=True restauró automáticamente los pesos de la época 52.", tech: "np.argmin(val_loss_h)+1 detecta el mínimo en validación interna. Como con Adam+Dropout val_loss oscila (45: 881.01 -> 49: 923.75 -> 52: 876.19), cortar al primer rebote (patience=1) habría detenido en la época 18 (992.16). Con patience=20 y restore_best_weights=True se evita tanto el corte prematuro como el overfitting posterior sin fijar epochs=52 a mano." }
   ];
 
   const STORAGE_KEY = "charlie_neural_guia_q_v1";
