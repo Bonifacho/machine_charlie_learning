@@ -36,14 +36,13 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* Header & Sticky Nav */
     header.hero {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 65%, #4c0519 100%);
       color: #fff;
-      padding: 2rem 1.5rem 1.6rem;
+      padding: 1.9rem 1.4rem 1.5rem;
       border-bottom: 4px solid var(--accent);
     }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 1.2rem; }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 1.2rem; }
     .badge {
       display: inline-block;
       background: rgba(244, 114, 182, 0.18);
@@ -52,12 +51,12 @@
       font-size: 0.78rem;
       font-weight: 700;
       letter-spacing: 0.04em;
-      padding: 0.25rem 0.65rem;
+      padding: 0.24rem 0.65rem;
       border-radius: 999px;
       text-transform: uppercase;
     }
-    header.hero h1 { margin: 0.6rem 0 0.4rem; font-size: 1.85rem; line-height: 1.2; }
-    header.hero p { margin: 0; color: #cbd5e1; max-width: 820px; font-size: 0.98rem; }
+    header.hero h1 { margin: 0.55rem 0 0.35rem; font-size: 1.82rem; line-height: 1.22; }
+    header.hero p { margin: 0; color: #cbd5e1; max-width: 880px; font-size: 0.96rem; }
 
     nav.topnav {
       position: sticky;
@@ -66,32 +65,31 @@
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      padding: 0.65rem 0;
+      padding: 0.6rem 0;
     }
     .nav-wrap {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 0.75rem;
+      gap: 0.65rem;
     }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.36rem; }
     .nav-links a {
-      font-size: 0.83rem;
+      font-size: 0.81rem;
       font-weight: 600;
       color: var(--navy);
-      padding: 0.32rem 0.62rem;
+      padding: 0.3rem 0.56rem;
       border-radius: 8px;
       background: var(--surface-alt);
     }
     .nav-links a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 
-    /* Timer + Progress Bar */
     .control-bar {
       display: grid;
       grid-template-columns: 1.25fr 1fr;
       gap: 1rem;
-      margin: 1.3rem auto 0;
+      margin: 1.25rem auto 0;
     }
     @media (max-width: 820px) { .control-bar { grid-template-columns: 1fr; } }
 
@@ -105,13 +103,13 @@
     .timer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.65rem; justify-content: space-between; }
     .timer-display {
       font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       font-weight: 800;
-      padding: 0.25rem 0.75rem;
+      padding: 0.24rem 0.72rem;
       border-radius: 8px;
       border: 2px solid var(--border);
       background: var(--surface-alt);
-      min-width: 96px;
+      min-width: 94px;
       text-align: center;
     }
     .timer-yellow { background: var(--amber-soft); border-color: #f59e0b; color: var(--amber); }
@@ -148,10 +146,9 @@
       transition: width 0.25s ease;
     }
 
-    /* Sections & Cards */
-    section { margin: 1.8rem 0; }
+    section { margin: 1.9rem 0; }
     section h2 {
-      font-size: 1.38rem;
+      font-size: 1.36rem;
       color: var(--navy);
       margin: 0 0 0.85rem;
       padding-bottom: 0.4rem;
@@ -173,10 +170,13 @@
       justify-content: center;
       flex-shrink: 0;
     }
+    h3.sub-title { margin: 0.2rem 0 0.55rem; color: var(--navy); font-size: 1.04rem; }
+
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.85rem; }
-    @media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 720px) { .grid-2, .grid-4 { grid-template-columns: 1fr; } }
+    @media (max-width: 960px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 720px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
 
     .kpi {
       background: var(--surface);
@@ -188,8 +188,8 @@
     }
     .kpi.teal { border-top-color: var(--teal); }
     .kpi.navy { border-top-color: var(--navy); }
-    .kpi .label { font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--muted); }
-    .kpi .val { font-size: 1.55rem; font-weight: 800; color: var(--navy); margin: 0.15rem 0; }
+    .kpi .label { font-size: 0.76rem; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+    .kpi .val { font-size: 1.52rem; font-weight: 800; color: var(--navy); margin: 0.15rem 0; }
     .kpi .sub { font-size: 0.82rem; color: var(--muted); }
 
     .callout {
@@ -202,8 +202,31 @@
     }
     .callout.teal { border-left-color: var(--teal); background: var(--teal-soft); }
     .callout.amber { border-left-color: #d97706; background: var(--amber-soft); }
-    .callout.red { border-left-color: var(--red); background: var(--red-soft); }
-    .callout h3 { margin: 0 0 0.35rem; font-size: 1.03rem; color: var(--navy); }
+    .callout.navy { border-left-color: var(--navy); background: var(--surface-alt); }
+    .callout h3 { margin: 0 0 0.35rem; font-size: 1.02rem; color: var(--navy); }
+
+    .tag-dummy {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-right: 0.35rem;
+    }
+    .tag-tech {
+      display: inline-block;
+      background: #f3e8ff;
+      color: #6b21a8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-right: 0.35rem;
+    }
 
     table {
       width: 100%;
@@ -212,21 +235,32 @@
       border-radius: var(--radius);
       overflow: hidden;
       border: 1px solid var(--border);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      margin: 0.55rem 0;
     }
-    th, td { padding: 0.58rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; }
-    th { background: var(--navy); color: #fff; font-weight: 700; font-size: 0.83rem; }
+    th, td { padding: 0.52rem 0.72rem; border-bottom: 1px solid var(--border); text-align: left; }
+    th { background: var(--navy); color: #fff; font-weight: 700; font-size: 0.81rem; }
     tr.win-row { background: var(--accent-soft); font-weight: 700; }
+    tr.sum-row { background: var(--surface-alt); font-weight: 700; }
     tr:last-child td { border-bottom: none; }
+
+    .pos { color: var(--teal); font-weight: 700; }
+    .neg { color: var(--red); font-weight: 700; }
 
     code, pre {
       font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-      background: #0f172a;
-      color: #f8fafc;
       border-radius: 6px;
     }
-    code { padding: 0.12rem 0.38rem; font-size: 0.84em; background: #e2e8f0; color: #0f172a; }
-    pre { padding: 0.85rem 1rem; overflow-x: auto; font-size: 0.88rem; }
+    code { padding: 0.11rem 0.36rem; font-size: 0.84em; background: #e2e8f0; color: #0f172a; }
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 0.85rem 1rem;
+      overflow-x: auto;
+      font-size: 0.86rem;
+      line-height: 1.48;
+      margin: 0.55rem 0;
+    }
 
     .svg-box {
       background: var(--surface);
@@ -240,7 +274,7 @@
     svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
     /* Guion en pareja */
-    .role-card h3 { margin-top: 0; display: flex; justify-content: space-between; align-items: center; }
+    .role-card h3 { margin-top: 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
     .pill { font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 999px; }
     .pill-a { background: var(--teal-soft); color: var(--teal); border: 1px solid #99f6e4; }
     .pill-b { background: var(--accent-soft); color: var(--accent); border: 1px solid #fbcfe8; }
@@ -251,7 +285,7 @@
       border-radius: 6px;
       font-style: italic;
       margin: 0.45rem 0;
-      font-size: 0.91rem;
+      font-size: 0.9rem;
     }
 
     /* Diccionario y Preguntas */
@@ -267,7 +301,7 @@
       padding: 0.85rem 1rem;
       box-shadow: var(--shadow);
     }
-    .dict-card h4 { margin: 0 0 0.35rem; color: var(--accent); font-size: 0.98rem; }
+    .dict-card h4 { margin: 0 0 0.35rem; color: var(--accent); font-size: 0.96rem; }
     .dict-simple { font-size: 0.89rem; margin-bottom: 0.35rem; }
     .dict-tech { font-size: 0.83rem; color: var(--muted); border-top: 1px dashed var(--border); padding-top: 0.35rem; }
 
@@ -299,7 +333,7 @@
       color: var(--muted);
       font-weight: 700;
     }
-    .q-body { margin-top: 0.7rem; padding-top: 0.65rem; border-top: 1px solid var(--border); font-size: 0.92rem; }
+    .q-body { margin-top: 0.7rem; padding-top: 0.65rem; border-top: 1px solid var(--border); font-size: 0.91rem; }
     .q-check { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 0.5rem; font-weight: 600; color: var(--teal); cursor: pointer; }
 
     @media print {
@@ -312,12 +346,13 @@
 
 <header class="hero">
   <div class="container">
-    <span class="badge">Taller Final Integrador ML 601 • Guía Maestra de Sustentación</span>
+    <span class="badge">Taller Final Integrador ML 601 • Guía Completa de Código, Modelos y Sustentación</span>
     <h1>Predicción de Precios de Fragancias Sephora: Regresión Lineal vs. Red Neuronal MLP</h1>
     <p>
-      Material de estudio autocontenido para <strong>Integrante A</strong> e <strong>Integrante B</strong>:
-      explicaciones cotidianas, defensa del dataset y del modelo clásico, arquitectura exacta, guion repartido (5–8 min),
-      diccionario buscable y banco interactivo de 19 preguntas del docente.
+      Guía pensada para entender <strong>de verdad</strong> qué hace cada script por dentro (primero en lenguaje simple y luego en técnico):
+      de dónde salen las <strong>92 columnas</strong>, cuál es el <strong>intercepto y las pendientes</strong> de la Regresión Lineal,
+      <strong>qué variables pesan más</strong> en la Red Neuronal, por qué se pusieron <strong>200 épocas</strong>, qué son los <strong>lotes de 32</strong>,
+      guion repartido (<strong>Integrante A</strong> / <strong>Integrante B</strong>) y <strong>22 preguntas reales</strong> del docente.
     </p>
   </div>
 </header>
@@ -325,13 +360,14 @@
 <nav class="topnav">
   <div class="container nav-wrap">
     <div class="nav-links">
-      <a href="#resumen">1. En 60 seg</a>
-      <a href="#aclaraciones">2. Dudas Clave</a>
-      <a href="#defensa">3. Dataset &amp; OLS vs RF</a>
-      <a href="#arquitectura">4. Modelos &amp; Métricas</a>
-      <a href="#guion">5. Guion Pareja</a>
-      <a href="#diccionario">6. Diccionario</a>
-      <a href="#preguntas">7. 19 Preguntas</a>
+      <a href="#resumen">1. Panorama</a>
+      <a href="#preprocesamiento">2. Preprocesamiento (92 cols)</a>
+      <a href="#lineal">3. Regresión Lineal</a>
+      <a href="#red">4. Red Neuronal (Pesos &amp; Lotes)</a>
+      <a href="#comparativa">5. Comparativa &amp; Métricas</a>
+      <a href="#guion">6. Guion Pareja</a>
+      <a href="#diccionario">7. Diccionario &amp; Respaldo</a>
+      <a href="#preguntas">8. 22 Preguntas</a>
     </div>
     <span style="font-size:0.8rem;color:var(--muted);font-weight:600;">Demo en vivo: <code>4_comparacion.py</code></span>
   </div>
@@ -363,7 +399,7 @@
     <div class="panel">
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <strong style="font-size:0.92rem;color:var(--navy);">Progreso de Estudio (Banco de Preguntas)</strong>
-        <span id="progressText" style="font-weight:800;color:var(--accent);font-size:0.95rem;">0 / 19 dominadas</span>
+        <span id="progressText" style="font-weight:800;color:var(--accent);font-size:0.95rem;">0 / 22 dominadas</span>
       </div>
       <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.55rem;">
@@ -373,20 +409,19 @@
     </div>
   </div>
 
-  <!-- SECCIÓN 1 -->
+  <!-- SECCIÓN 1: PANORAMA GENERAL -->
   <section id="resumen">
-    <h2><span class="sec-num">1</span> El Proyecto Explicado en 60 Segundos</h2>
+    <h2><span class="sec-num">1</span> Panorama General (El Proyecto en 60 Segundos)</h2>
     <div class="callout">
       <h3>Pregunta de Negocio Aprobada</h3>
-      <p style="margin:0;font-size:1.03rem;">
+      <p style="margin:0;font-size:1.01rem;">
         <em>«¿Con qué precisión se puede predecir el precio en USD (<code>price_usd</code>) de una fragancia en Sephora según su marca, subcategoría, tipo de variación, popularidad y atributos comerciales?»</em>
       </p>
     </div>
     <p>
-      En términos sencillos: tomamos <strong>1,432 perfumes y fragancias reales</strong> de Sephora (precios entre <strong>$10 y $395 USD</strong>),
-      limpiamos sus datos sin hacer trampas (sin mirar el examen de prueba), y pusimos a competir dos enfoques: una ecuación clásica
-      (<strong>Regresión Lineal Múltiple</strong> de Scikit-Learn) contra una <strong>Red Neuronal MLP</strong> de TensorFlow/Keras.
-      La Red Neuronal ganó en el examen final no visto (<code>X_test</code>, 287 fragancias) porque logra capturar cómo se combinan la marca con el formato del frasco.
+      Partimos de <strong>1,432 perfumes y fragancias reales</strong> de Sephora (precios entre <strong>$10.00 y $395.00 USD</strong>, mediana $80.00 USD).
+      Traducimos sus 12 características iniciales a una tabla numérica de <strong>100 columnas</strong> sin hacer trampa (sin tocar el 20% de prueba) y pusimos a competir dos modelos:
+      una ecuación matemática clásica (<strong>Regresión Lineal Múltiple</strong>) y una <strong>Red Neuronal MLP</strong>. En el examen final no visto (<code>X_test</code>, 287 perfumes), ganó la Red Neuronal.
     </p>
 
     <div class="grid-4">
@@ -430,7 +465,7 @@
         <text x="315" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#0f766e">1_preprocesamiento.py</text>
         <text x="315" y="75" text-anchor="middle" font-size="11" fill="#1e293b">1. Split 80/20 (seed=412)</text>
         <text x="315" y="92" text-anchor="middle" font-size="11" fill="#1e293b">2. SimpleImputer (solo Train)</text>
-        <text x="315" y="109" text-anchor="middle" font-size="11" fill="#1e293b">3. OHE (92) + Scaler (8)</text>
+        <text x="315" y="109" text-anchor="middle" font-size="11" fill="#1e293b">3. 92 Dummies + 8 Scaler</text>
         <text x="315" y="126" text-anchor="middle" font-size="11" font-weight="700" fill="#0f766e">1,145×100 | 287×100</text>
 
         <line x1="413" y1="62" x2="462" y2="44" stroke="#475569" stroke-width="2.2" marker-end="url(#arr)"/>
@@ -456,168 +491,384 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 2 -->
-  <section id="aclaraciones">
-    <h2><span class="sec-num">2</span> Explicaciones Sencillas de los 3 Conceptos que Más Confunden</h2>
-    <div class="grid-2">
-      <div class="panel">
-        <div class="callout teal" style="margin-top:0;">
-          <h3>A) ¿Por qué usamos MSE, RMSE, MAE y R² y NO exactitud, precisión o exhaustividad?</h3>
-          <p style="margin:0.35rem 0;">
-            <strong>Explicación cotidiana:</strong> Imagina que intentas adivinar si una foto es <em>perro o gato</em> (eso es <strong>clasificación</strong>): ahí solo cuentas aciertos o fallos (<em>Exactitud / Accuracy, Precisión, Recall</em>).
-            En cambio, nosotros adivinamos el <strong>precio en dólares de un perfume</strong> (eso es <strong>regresión</strong>). Si un perfume cuesta $100 USD y el modelo dice $99 USD, no es "fallo total": ¡estuvo a solo $1 USD! Por eso medimos <em>por cuántos dólares se equivoca</em>:
-          </p>
-          <ul style="margin:0.4rem 0 0 1.1rem;padding:0;font-size:0.9rem;">
-            <li><strong>MAE ($21.02 USD):</strong> error promedio en dólares (fácil de entender para el negocio).</li>
-            <li><strong>RMSE ($33.85 USD):</strong> error típico en dólares castigando más los errores grandes (raíz del <strong>MSE = 1145.83</strong>).</li>
-            <li><strong>R² (0.7662):</strong> qué porcentaje del comportamiento del precio explica el modelo (~76.6% vs. un baseline de ~0%).</li>
-          </ul>
-        </div>
-        <p style="font-size:0.86rem;color:var(--muted);margin-bottom:0;">
-          <strong>Qué decir si el profe pregunta:</strong> <em>«Exactitud, precisión y exhaustividad son métricas exclusivas de clasificación por categorías; como nuestra variable objetivo price_usd es continua en dólares, el taller exige MSE, MAE y R².»</em>
-        </p>
-      </div>
+  <!-- SECCIÓN 2: PREPROCESAMIENTO AL DETALLE -->
+  <section id="preprocesamiento">
+    <h2><span class="sec-num">2</span> Preprocesamiento al Detalle (<code>1_preprocesamiento.py</code>)</h2>
 
-      <div class="panel">
-        <div class="callout" style="margin-top:0;">
-          <h3>B) ¿Por qué la Red Neuronal tiene 72 épocas y la Regresión Lineal NO?</h3>
-          <p style="margin:0.35rem 0;">
-            <strong>Explicación cotidiana:</strong>
-          </p>
-          <ul style="margin:0.4rem 0 0 1.1rem;padding:0;font-size:0.9rem;">
-            <li><strong>Regresión Lineal (<code>LinearRegression</code>):</strong> es como resolver una ecuación algebraica exacta con calculadora. Con una fórmula matricial cerrada (<strong>SVD / mínimos cuadrados</strong>) halla los mejores pesos en <strong>1 solo paso</strong> (0.05 s). No "entrena por rondas". Para ver cómo mejora, mostramos su <strong>curva de aprendizaje</strong> dándole cada vez más ejemplos (del 20% al 100%, donde su R² de validación sube de <code>0.5855</code> a <code>0.7110</code>).</li>
-            <li><strong>Red Neuronal (Keras):</strong> tiene <strong>8,577 perillas</strong> (pesos) conectadas de forma no lineal, sin fórmula directa. Por eso aprende por ensayo y error: cada <strong>época</strong> repasa los datos y ajusta las perillas con <code>Adam</code>. En <code>4_comparacion.py</code> ves época 1 (<code>Val MSE=9301.32</code>) bajar hasta la <strong>mejor época 52</strong> (<code>Val MSE=876.19</code>, <code>Val MAE=$18.59</code>), deteniéndose en la época 72 por <code>EarlyStopping</code>.</li>
-          </ul>
-        </div>
-      </div>
+    <div class="panel" style="margin-bottom:1rem;">
+      <p style="margin-top:0;">
+        <span class="tag-dummy">Para dummies</span>
+        Un modelo de Machine Learning es una calculadora matemática: <strong>no sabe leer texto</strong> (<code>"TOM FORD"</code>), <strong>se bloquea con celdas vacías</strong> (<code>NaN</code>) y <strong>se confunde si mezclas números gigantes</strong> (<code>276,396</code> likes) con números chiquitos (<code>4.3</code> estrellas). Por eso <code>1_preprocesamiento.py</code> ejecuta estos <strong>5 pasos en orden estricto</strong>:
+      </p>
+      <ol style="margin:0.4rem 0 0 1.2rem;padding:0;font-size:0.92rem;">
+        <li><strong>Separar pistas (<code>X</code>, 12 columnas) de respuesta (<code>y = price_usd</code>):</strong> verificando que no haya IDs ni precios con descuento (cualquier columna trampa en <code>COLUMNAS_EXCLUIR</code> se descarta).</li>
+        <li><strong>Partir 80/20 ANTES de transformar (<code>random_state=412</code>):</strong> <code>1,145</code> perfumes para estudiar (<code>Train</code>) y <code>287</code> perfumes guardados bajo llave para el examen (<code>Test</code>). Se parte <em>primero</em> para evitar <strong>data leakage</strong> (no calcular medianas, modas ni promedios usando datos del examen).</li>
+        <li><strong>Tapar los 397 huecos vacíos (<code>SimpleImputer</code> ajustado solo en Train):</strong> en numéricas se usa la <strong>mediana</strong> (<code>rating=4.3333</code>, <code>reviews=49.0</code>) porque resiste valores extremos; en categóricas se usa la <strong>moda</strong> (<code>NEST New York</code>, <code>Women</code>, <code>Perfume</code>, <code>Size + Concentration + Formulation</code>).</li>
+        <li><strong>Traducir palabras a interruptores 0/1 (One-Hot Encoding):</strong> las 4 columnas de texto se expanden en <strong>92 columnas binarias</strong>.</li>
+        <li><strong>Poner los números en la misma escala (<code>StandardScaler</code> solo sobre Train):</strong> convierte cada una de las 8 columnas numéricas en puntaje <code>z = (valor - media_Train) / desviación_Train</code>, dejándolas todas con media <code>0.0</code> y desviación estándar <code>1.0</code>.</li>
+      </ol>
     </div>
 
-    <div class="panel" style="margin-top:1rem;">
-      <div class="callout amber" style="margin:0;">
-        <h3>C) ¿Por qué la mejor época es la 52 si el entrenamiento corre hasta la 72? ¿Eso no genera overfitting?</h3>
-        <p style="margin:0.4rem 0;">
-          <strong>1. Primero, en lenguaje sencillo (analogía del corredor):</strong>
-          Imagina a un atleta entrenando para romper su mejor tiempo. En el intento <strong>52</strong> logra su récord personal. Como es normal tener altibajos (de hecho, en el intento 49 tuvo un día más lento antes de lograr el récord en el 52), el entrenador decide darle <strong>20 intentos extra de margen</strong> por si vuelve a romperlo. Al llegar al intento <strong>72</strong> sin superar la marca del 52, detiene la práctica y <strong>anota oficialmente la marca del intento 52</strong>, descartando los últimos 20 intentos flojos.
-        </p>
-        <p style="margin:0.45rem 0 0.35rem;"><strong>2. Después, en lenguaje técnico (lo que ocurre en <code>3_red_neuronal.py</code>):</strong></p>
-        <ul style="margin:0.2rem 0 0 1.15rem;padding:0;font-size:0.9rem;">
-          <li><strong>Criterio de selección (<code>val_loss</code>):</strong> <code>EarlyStopping(monitor="val_loss", patience=20, restore_best_weights=True)</code> y <code>mejor_epoca = int(np.argmin(val_loss_h)) + 1</code> eligen la época con el menor error en el 20% de validación interna: <strong>época 52</strong> (<code>Val MSE = 876.19</code>, <code>Val MAE = $18.59 USD</code>). No se guía por <code>Train MSE</code>, porque en Train el error sigue bajando (de <code>701.66</code> a <code>646.39</code> en la época 69) mientras en Validación empieza a subir (señal de inicio de memorización / <em>overfitting</em>).</li>
-          <li><strong>¿Por qué no paró justo en la 52 y corrió hasta la 72 (<code>52 + 20</code>)?</strong> Porque en la época 52 la red no conoce el futuro, y con <code>Adam</code> + <code>Dropout</code> la curva oscila (época 45: <code>881.01</code> → época 49: <code>923.75</code> → época 52: <code>876.19</code>). Si paráramos al primer rebote (<code>patience=1</code>), habría cortado prematuramente en la <strong>época 18</strong> (<code>Val MSE = 992.16</code>) perdiendo precisión.</li>
-          <li><strong>¿Entonces NO se queda con el <em>overfitting</em> de la época 72?</strong> <strong>Exacto, no se queda con él.</strong> Gracias a <code>restore_best_weights=True</code>, al frenar en la época 72 Keras descarta las épocas 53–72 y <strong>rebobina automáticamente los 8,577 pesos a los valores exactos de la época 52</strong> antes de evaluar <code>X_test</code> (evitando fijar <code>epochs=52</code> a mano).</li>
-        </ul>
-      </div>
+    <div class="panel" style="margin-bottom:1rem;">
+      <h3 class="sub-title">¿De dónde salen exactamente las 92 columnas dummy y por qué son tantas?</h3>
+      <p style="margin:0.2rem 0 0.5rem;font-size:0.92rem;">
+        <span class="tag-dummy">En sencillo</span> Cada columna de texto se convierte en tantas columnas de <code>sí/no (1/0)</code> como opciones diferentes existan en <code>Train</code>, <strong>menos 1</strong> (porque ponemos <code>drop_first=True</code>). ¿Por qué quitamos 1 por grupo? Porque si una fragancia tiene <code>0</code> en todas las marcas mostradas, por descarte pertenece a la primera marca (en este caso <code>'19-69'</code>); dejar esa columna extra sería información repetida que daña la matemática de la Regresión Lineal.<br />
+        <span class="tag-tech">¿Por qué son 92?</span> ¡Casi todas vienen de <strong><code>brand_name</code> (77 de las 92 columnas, es decir, el 83.7%)</strong> porque Sephora vende casi 80 marcas distintas de perfumes!
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Columna categórica original</th>
+            <th>Categorías únicas en Train</th>
+            <th>Columnas creadas (<code>drop_first=True</code>)</th>
+            <th>Categoría de referencia omitida (cuando todas valen 0)</th>
+            <th>Notas reales de Test (<code>X_test</code>)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>brand_name</code></td>
+            <td>78 marcas</td>
+            <td><strong>77</strong> columnas dummy</td>
+            <td><code>'19-69'</code> (primera alfabéticamente)</td>
+            <td>1 marca solo salió en Test (<code>'Eight & Bob'</code>) → queda toda en 0.</td>
+          </tr>
+          <tr>
+            <td><code>secondary_category</code></td>
+            <td>5 categorías</td>
+            <td><strong>4</strong> columnas dummy</td>
+            <td><code>'Candles &amp; Home Scents'</code></td>
+            <td>Todas vistas en Train.</td>
+          </tr>
+          <tr>
+            <td><code>tertiary_category</code></td>
+            <td>8 subcategorías</td>
+            <td><strong>7</strong> columnas dummy</td>
+            <td><code>'Body Mist &amp; Hair Mist'</code></td>
+            <td>Todas vistas en Train.</td>
+          </tr>
+          <tr>
+            <td><code>variation_type</code></td>
+            <td>5 tipos</td>
+            <td><strong>4</strong> columnas dummy</td>
+            <td><code>'Color'</code></td>
+            <td>1 tipo solo salió en Test (<code>'Formulation'</code>) → queda todo en 0.</td>
+          </tr>
+          <tr class="sum-row">
+            <td>TOTAL MATRIZ FINAL (<code>X_train</code> / <code>X_test</code>)</td>
+            <td>96 categorías en Train</td>
+            <td>77 + 4 + 7 + 4 = <strong>92 dummies</strong></td>
+            <td colspan="2"><strong>92</strong> columnas dummy + <strong>8</strong> columnas numéricas escaladas = <strong>100 columnas totales</strong> (0 NaNs).</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="svg-box">
-      <svg viewBox="0 0 960 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación visual entrenamiento SVD vs Épocas">
-        <rect x="10" y="10" width="455" height="200" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
-        <text x="237" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f766e">Regresión Lineal: Curva de Aprendizaje (1 paso SVD)</text>
-        <line x1="60" y1="168" x2="430" y2="168" stroke="#64748b" stroke-width="1.3"/>
-        <line x1="60" y1="55" x2="60" y2="168" stroke="#64748b" stroke-width="1.3"/>
-        <!-- Puntos reales Val RMSE: 40.39, 35.89, 35.02, 34.49, 33.73 -->
-        <polyline fill="none" stroke="#0f766e" stroke-width="3" points="85,72 165,112 245,122 325,129 405,138"/>
-        <circle cx="85" cy="72" r="5" fill="#0f766e"/><text x="85" y="63" text-anchor="middle" font-size="10.5" fill="#0f172a" font-weight="700">20%: $40.39</text>
-        <circle cx="165" cy="112" r="5" fill="#0f766e"/><text x="165" y="102" text-anchor="middle" font-size="10.5" fill="#0f172a">40%: $35.89</text>
-        <circle cx="245" cy="122" r="5" fill="#0f766e"/><text x="245" y="112" text-anchor="middle" font-size="10.5" fill="#0f172a">60%: $35.02</text>
-        <circle cx="325" cy="129" r="5" fill="#0f766e"/><text x="325" y="119" text-anchor="middle" font-size="10.5" fill="#0f172a">80%: $34.49</text>
-        <circle cx="405" cy="138" r="5" fill="#0f766e"/><text x="405" y="155" text-anchor="middle" font-size="10.5" fill="#0f766e" font-weight="700">100%: $33.73 (R²=0.71)</text>
-        <text x="245" y="194" text-anchor="middle" font-size="11" fill="#334155">Más muestras de entrenamiento → menor error en validación interna</text>
+    <div class="callout teal">
+      <h3>Ejemplo real ANTES vs. DESPUÉS: así entra la Muestra 0 de <code>X_test</code> a los modelos</h3>
+      <p style="margin:0.3rem 0;font-size:0.9rem;">
+        Esta fila real del dataset es un perfume de la marca <code>'19-69'</code> que cuesta <strong>$195.00 USD</strong> en la vida real:
+      </p>
+      <pre>• DATOS CRUDOS (12 columnas originales):
+  loves_count=981 | rating=3.0 | reviews=4.0 | child_count=2 | limited_edition=0 | new=0 | online_only=1 | sephora_exclusive=0
+  brand_name='19-69' | secondary_category='Women' | tertiary_category='Perfume' | variation_type='Size + Concentration + Formulation'
 
-        <rect x="495" y="10" width="455" height="200" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="1.6"/>
-        <text x="722" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="#be185d">Red Neuronal MLP: Descenso Época por Época (1 a 72)</text>
-        <line x1="545" y1="168" x2="915" y2="168" stroke="#64748b" stroke-width="1.3"/>
-        <line x1="545" y1="55" x2="545" y2="168" stroke="#64748b" stroke-width="1.3"/>
-        <path d="M 555,62 Q 585,128 640,136 T 800,141 L 900,140" fill="none" stroke="#be185d" stroke-width="3"/>
-        <line x1="800" y1="58" x2="800" y2="168" stroke="#d97706" stroke-width="2" stroke-dasharray="5,4"/>
-        <circle cx="555" cy="62" r="5" fill="#be185d"/><text x="615" y="68" font-size="10.5" fill="#0f172a" font-weight="700">Ép.1: Val MSE 9301</text>
-        <circle cx="800" cy="141" r="6" fill="#d97706"/><text x="796" y="122" text-anchor="middle" font-size="10.5" fill="#b45309" font-weight="700">Mejor Ép. 52: 876.19</text>
-        <text x="892" y="157" text-anchor="middle" font-size="10" fill="#475569">Ép.72</text>
-        <text x="722" y="194" text-anchor="middle" font-size="11" fill="#334155">Adam ajusta 8,577 pesos; EarlyStopping restaura época 52</text>
-      </svg>
-    </div>
-  </section>
-
-  <!-- SECCIÓN 3 -->
-  <section id="defensa">
-    <h2><span class="sec-num">3</span> Defensa del Dataset y de Regresión Lineal Múltiple vs. Random Forest</h2>
-    <div class="grid-2">
-      <div class="panel">
-        <h3 style="margin-top:0;color:var(--navy);">¿Por qué descartamos el CSV inicial y elegimos <code>sephora_fragrance.csv</code>?</h3>
-        <ul style="padding-left:1.15rem;margin:0.4rem 0;font-size:0.92rem;">
-          <li><strong>El <code>sephora.csv</code> inicial no servía:</strong> contenía 4,371 tonos de bases de maquillaje, pero <strong>cero columnas numéricas</strong> (ni precios ni calificaciones) y nulos de hasta 38.85% en <code>name</code>.</li>
-          <li><strong>Cumplimiento exacto del PDF con <code>sephora_fragrance.csv</code>:</strong> subconjunto <code>Fragrance</code> del catálogo real de Sephora (Kaggle):
-            <ul>
-              <li><strong>1,432 registros</strong> (rango pedido: 1,000–5,000).</li>
-              <li><strong>12 variables de entrada</strong> (8 numéricas/binarias + 4 categóricas) + <code>price_usd</code> (rango pedido: 6–15).</li>
-              <li><strong>2.13% de nulos reales</strong> en el CSV (<strong>2.31% en X</strong>: 186 en <code>rating</code>/<code>reviews</code> y 211 en categorías; rango pedido: 2%–5%). <strong>0 nulos</strong> en <code>price_usd</code>.</li>
-            </ul>
-          </li>
-          <li><strong>Cero <em>data leakage</em>:</strong> eliminamos IDs (<code>product_id</code>, <code>brand_id</code>, <code>product_name</code>) y precios hermanos (<code>value_price_usd</code>, <code>sale_price_usd</code>, <code>child_min/max_price</code>) porque habrían "soplado" el precio al modelo.</li>
-        </ul>
-      </div>
-
-      <div class="panel">
-        <h3 style="margin-top:0;color:var(--navy);">¿Por qué Regresión Lineal Múltiple y NO Random Forest? (Análisis Imparcial)</h3>
-        <p style="font-size:0.9rem;margin:0.25rem 0;"><strong>Por qué <code>LinearRegression</code> sí encaja en este problema:</strong></p>
-        <ul style="padding-left:1.15rem;margin:0.2rem 0 0.6rem;font-size:0.89rem;">
-          <li><strong>Alta cardinalidad One-Hot (100 columnas):</strong> con 79 marcas y solo 1,145 filas de Train, Random Forest corta de a 1 columna binaria por nodo y tiende a fragmentar y sobreajustar; OLS estima todos los pesos simultáneamente con <strong>cero overfitting</strong> (<code>Train R²=0.7072</code> vs <code>Test R²=0.7297</code>).</li>
-          <li><strong>Interpretabilidad directa en USD:</strong> muestra cuánto suma/resta cada atributo desde <code>β₀ = +$43.76</code> (<code>Diffusers +$99.77</code>, <code>TOM FORD +$85.68</code>, <code>The Phluid Project -$103.78</code>).</li>
-          <li><strong>Extrapolación y contraste limpio:</strong> los árboles promedian hojas y comprimen extremos ($300–$395); además, contrastar un modelo puramente lineal contra un MLP no lineal (ReLU) hace clarísima la comparación con TensorFlow.</li>
-        </ul>
-        <p style="font-size:0.9rem;margin:0.25rem 0;"><strong>Sus límites reales (dónde gana un modelo no lineal como el MLP):</strong></p>
-        <ul style="padding-left:1.15rem;margin:0.2rem 0 0;font-size:0.89rem;">
-          <li>No captura interacciones multiplicativas <code>marca × formato</code> (bajar a tamaño viaje resta distinto en TOM FORD que en marcas económicas).</li>
-          <li>Sin cota inferior generó <strong>8 predicciones negativas</strong> (mín. -$9.88), problema que la Red Neuronal eliminó por completo (0 negativas).</li>
-        </ul>
-      </div>
+• LO QUE RECIBEN AMBOS MODELOS EN X_test.csv (100 números):
+  - 8 numéricas escaladas (z): loves_count=-0.5154, rating=-2.2380, reviews=-0.4663, child_count=+1.3776,
+                               limited_edition=-0.3942, new=-0.2777, online_only=+1.7013, sephora_exclusive=-0.4418
+  - 92 dummies (0/1): solo 3 valen 1.0 → secondary_category_Women=1, tertiary_category_Perfume=1, variation_type_Size + Conc + Form=1
+                      (brand_name='19-69' es la referencia omitida, por eso las 77 columnas de marca valen 0.0; las demás 89 dummies valen 0.0)</pre>
     </div>
   </section>
 
-  <!-- SECCIÓN 4 -->
-  <section id="arquitectura">
-    <h2><span class="sec-num">4</span> Arquitectura de Modelos y Comparativa Oficial</h2>
+  <!-- SECCIÓN 3: MODELO 1 - REGRESIÓN LINEAL MÚLTIPLE -->
+  <section id="lineal">
+    <h2><span class="sec-num">3</span> Modelo 1 a Fondo: Regresión Lineal Múltiple (<code>2_modelo_clasico.py</code>)</h2>
+
+    <div class="panel" style="margin-bottom:1rem;">
+      <p style="margin-top:0;">
+        <span class="tag-dummy">Para dummies</span>
+        En el colegio viste la recta con <strong>1 sola pendiente</strong>: <code>y = m·x + b</code>.
+        Como aquí tenemos <strong>100 variables de entrada</strong>, la <strong>Regresión Lineal Múltiple</strong> es exactamente la misma idea pero con <strong>1 intercepto (<code>β₀</code>) y 100 pendientes parciales (<code>β₁ ... β₁₀₀</code>)</strong> — una pendiente para cada columna:
+      </p>
+      <pre>Precio Predicho (ŷ) = β₀ (+43.76 USD) + β₁·x₁ + β₂·x₂ + ... + β₁₀₀·x₁₀₀</pre>
+      <p style="margin:0.35rem 0 0;font-size:0.9rem;">
+        <span class="tag-tech">¿Qué significa el intercepto β₀ = +43.76 USD?</span> Es el <strong>punto de partida base</strong> de la ecuación: lo que costaría una fragancia hipotética que tuviera todas sus 8 variables numéricas justo en el promedio de entrenamiento (<code>z = 0</code>) y perteneciera a las 4 categorías de referencia omitidas (marca <code>'19-69'</code>, <code>'Candles &amp; Home Scents'</code>, <code>'Body Mist &amp; Hair Mist'</code>, tipo <code>'Color'</code>). A partir de <code>+$43.76 USD</code>, cada característica suma o resta dólares según su pendiente.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h3 class="sub-title">Tabla 1: Las 8 Pendientes de las Variables Numéricas (Escaladas)</h3>
+        <p style="font-size:0.84rem;color:var(--muted);margin:0 0 0.4rem;">Como están escaladas con <code>StandardScaler</code>, cada pendiente β indica cuántos USD cambia el precio cuando esa variable sube <strong>+1 desviación estándar (SD)</strong> en <code>Train</code>.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Variable numérica</th>
+              <th>Pendiente β (por +1 SD)</th>
+              <th>Media / SD en Train</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>child_count</code> (presentaciones)</td><td class="pos">+$10.31 USD</td><td>0.65 / 0.98</td></tr>
+            <tr><td><code>limited_edition</code> (edición limitada)</td><td class="pos">+$4.03 USD</td><td>0.13 / 0.34</td></tr>
+            <tr><td><code>online_only</code> (solo en línea)</td><td class="pos">+$2.88 USD</td><td>0.26 / 0.44</td></tr>
+            <tr><td><code>new</code> (producto nuevo)</td><td class="pos">+$1.47 USD</td><td>0.07 / 0.26</td></tr>
+            <tr><td><code>rating</code> (estrellas 1–5)</td><td class="pos">+$0.87 USD</td><td>4.23 / 0.55</td></tr>
+            <tr><td><code>reviews</code> (n.º reseñas)</td><td class="neg">-$2.15 USD</td><td>234.12 / 493.50</td></tr>
+            <tr><td><code>sephora_exclusive</code> (exclusivo)</td><td class="neg">-$3.04 USD</td><td>0.16 / 0.37</td></tr>
+            <tr><td><code>loves_count</code> (favoritos)</td><td class="neg">-$3.96 USD</td><td>12,463 / 22,277</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="panel">
+        <h3 class="sub-title">Tabla 2: Pendientes de Categorías y Marcas (USD directos al valer 1)</h3>
+        <p style="font-size:0.84rem;color:var(--muted);margin:0 0 0.4rem;">En las 92 columnas dummy (que valen <code>0</code> o <code>1</code>), la pendiente es el monto exacto en USD que suma o resta frente a su categoría omitida.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Columna Dummy (<code>= 1</code>)</th>
+              <th>Pendiente β</th>
+              <th>Grupo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>secondary_category_Women</code></td><td class="pos">+$90.94 USD</td><td>Público</td></tr>
+            <tr><td><code>secondary_category_Men</code></td><td class="pos">+$70.20 USD</td><td>Público</td></tr>
+            <tr><td><code>secondary_category_Value &amp; Gift Sets</code></td><td class="pos">+$55.75 USD</td><td>Público</td></tr>
+            <tr><td><code>tertiary_category_Diffusers</code></td><td class="pos">+$99.77 USD</td><td>Tipo</td></tr>
+            <tr><td><code>tertiary_category_Candles</code></td><td class="pos">+$84.35 USD</td><td>Tipo</td></tr>
+            <tr><td><code>tertiary_category_Perfume</code></td><td class="pos">+$53.59 USD</td><td>Tipo</td></tr>
+            <tr><td><code>tertiary_category_Rollerballs &amp; Travel Size</code></td><td class="neg">-$22.47 USD</td><td>Tipo</td></tr>
+            <tr><td><code>variation_type_Size + Conc + Formulation</code></td><td class="neg">-$50.06 USD</td><td>Variación</td></tr>
+            <tr><td><code>variation_type_Type</code></td><td class="neg">-$81.03 USD</td><td>Variación</td></tr>
+            <tr><td><code>brand_name_TOM FORD</code> / <code>KILIAN Paris</code></td><td class="pos">+$85.68 / +$75.03</td><td>Top Marcas +</td></tr>
+            <tr><td><code>brand_name_The Phluid Project</code> / <code>Glossier</code></td><td class="neg">-$103.78 / -$74.44</td><td>Top Marcas -</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout navy">
+      <h3>Cálculo real paso a paso ("Haz la cuenta a mano") — Muestra 0 de <code>X_test</code></h3>
+      <p style="margin:0.3rem 0;font-size:0.9rem;">
+        Así calcula exactamente <code>LinearRegression.predict()</code> el precio del perfume <code>'19-69'</code> (cuyo valor real es <strong>$195.00 USD</strong>):
+      </p>
+      <pre>  1) Intercepto base (β₀):                                             +$43.76 USD
+  2) Aporte 8 numéricas (x_i · β_i):
+     loves(-0.5154·-3.96 = +2.04) + rating(-2.2380·+0.87 = -1.96)
+   + reviews(-0.4663·-2.15 = +1.00) + child_count(+1.3776·+10.31 = +14.20)
+   + limited(-0.3942·+4.03 = -1.59) + new(-0.2777·+1.47 = -0.41)
+   + online(+1.7013·+2.88 = +4.90) + exclusive(-0.4418·-3.04 = +1.34)  +$19.52 USD
+  3) Aporte dummies activas (= 1):
+     Women (+90.94) + Perfume (+53.59) + Variation_SCF (-50.06)        +$94.47 USD
+  -----------------------------------------------------------------------------------
+  SUMA EXACTA PREDICHA POR EL MODELO =                                 $157.75 USD  (Real: $195.00 | Error: -$37.25 USD)</pre>
+      <p style="margin:0.35rem 0 0;font-size:0.88rem;color:var(--muted);">
+        <strong>¿Cómo encuentra estas 101 cifras sin épocas?</strong> Usa álgebra lineal exacta (descomposición <strong>SVD / mínimos cuadrados</strong>) en ~<code>0.05–0.07 s</code>. Como es una suma recta sin tope mínimo, cuando coinciden varias pendientes negativas fuertes predijo <strong>8 valores negativos</strong> en Test (mínimo <code>-$9.88 USD</code>).
+      </p>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: MODELO 2 - RED NEURONAL MLP -->
+  <section id="red">
+    <h2><span class="sec-num">4</span> Modelo 2 a Fondo: Red Neuronal MLP (<code>3_red_neuronal.py</code>)</h2>
 
     <div class="svg-box">
-      <svg viewBox="0 0 960 145" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arquitectura Red Neuronal Sequential">
+      <svg viewBox="0 0 960 148" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arquitectura Red Neuronal Sequential">
         <defs>
           <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="#be185d"/>
           </marker>
         </defs>
-        <rect x="10" y="25" width="135" height="92" rx="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
-        <text x="77" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Entrada</text>
-        <text x="77" y="75" text-anchor="middle" font-size="12" fill="#334155">100 variables</text>
-        <text x="77" y="94" text-anchor="middle" font-size="10.5" fill="#64748b">float32 (8 num + 92 OHE)</text>
+        <rect x="10" y="24" width="135" height="96" rx="10" fill="#f1f5f9" stroke="#0f172a" stroke-width="2"/>
+        <text x="77" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#0f172a">Input(100)</text>
+        <text x="77" y="74" text-anchor="middle" font-size="11.5" fill="#334155">8 num + 92 OHE</text>
+        <text x="77" y="94" text-anchor="middle" font-size="10.5" fill="#64748b">tipo float32</text>
 
-        <line x1="145" y1="71" x2="177" y2="71" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
+        <line x1="145" y1="72" x2="177" y2="72" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
 
-        <rect x="180" y="20" width="175" height="102" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
-        <text x="267" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">Dense(64, ReLU)</text>
-        <text x="267" y="67" text-anchor="middle" font-size="11.5" fill="#1e293b">Kernel Reg L2 = 0.01</text>
-        <text x="267" y="85" text-anchor="middle" font-size="11.5" fill="#1e293b">+ Dropout(0.10)</text>
-        <text x="267" y="105" text-anchor="middle" font-size="10.5" fill="#64748b">6,464 parámetros</text>
+        <rect x="180" y="18" width="180" height="108" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
+        <text x="270" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">Dense(64, ReLU)</text>
+        <text x="270" y="64" text-anchor="middle" font-size="11.5" fill="#1e293b">L2=0.01 + Dropout(0.10)</text>
+        <text x="270" y="84" text-anchor="middle" font-size="10.5" fill="#475569">100×64 pesos + 64 sesgos</text>
+        <text x="270" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">= 6,464 parámetros</text>
 
-        <line x1="355" y1="71" x2="387" y2="71" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
+        <line x1="360" y1="72" x2="392" y2="72" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
 
-        <rect x="390" y="20" width="175" height="102" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
-        <text x="477" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">Dense(32, ReLU)</text>
-        <text x="477" y="67" text-anchor="middle" font-size="11.5" fill="#1e293b">Kernel Reg L2 = 0.01</text>
-        <text x="477" y="85" text-anchor="middle" font-size="11.5" fill="#1e293b">+ Dropout(0.10)</text>
-        <text x="477" y="105" text-anchor="middle" font-size="10.5" fill="#64748b">2,080 parámetros</text>
+        <rect x="395" y="18" width="180" height="108" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="2"/>
+        <text x="485" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">Dense(32, ReLU)</text>
+        <text x="485" y="64" text-anchor="middle" font-size="11.5" fill="#1e293b">L2=0.01 + Dropout(0.10)</text>
+        <text x="485" y="84" text-anchor="middle" font-size="10.5" fill="#475569">64×32 pesos + 32 sesgos</text>
+        <text x="485" y="104" text-anchor="middle" font-size="11" font-weight="700" fill="#0f172a">= 2,080 parámetros</text>
 
-        <line x1="565" y1="71" x2="597" y2="71" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
+        <line x1="575" y1="72" x2="607" y2="72" stroke="#be185d" stroke-width="2" marker-end="url(#arr2)"/>
 
-        <rect x="600" y="25" width="145" height="92" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="2"/>
-        <text x="672" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#0f766e">Dense(1, Linear)</text>
-        <text x="672" y="75" text-anchor="middle" font-size="11.5" fill="#1e293b">Precio predicho USD</text>
-        <text x="672" y="94" text-anchor="middle" font-size="10.5" fill="#64748b">33 parámetros</text>
+        <rect x="610" y="24" width="145" height="96" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="2"/>
+        <text x="682" y="54" text-anchor="middle" font-size="13" font-weight="700" fill="#0f766e">Dense(1, Linear)</text>
+        <text x="682" y="74" text-anchor="middle" font-size="10.5" fill="#1e293b">32×1 + 1 sesgo = 33</text>
+        <text x="682" y="94" text-anchor="middle" font-size="10.5" fill="#0f766e">Salida continua USD</text>
 
-        <rect x="765" y="18" width="185" height="106" rx="10" fill="#0f172a"/>
-        <text x="857" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="#fbcfe8">Total: 8,577 params</text>
-        <text x="857" y="62" text-anchor="middle" font-size="11" fill="#fff">Adam (lr = 0.003)</text>
-        <text x="857" y="80" text-anchor="middle" font-size="11" fill="#fff">Loss: MSE | Batch: 32</text>
-        <text x="857" y="98" text-anchor="middle" font-size="11" fill="#fff">Val split: 20% | Seed: 412</text>
-        <text x="857" y="114" text-anchor="middle" font-size="10.5" fill="#5eead4">EarlyStopping (p=20)</text>
+        <rect x="772" y="16" width="178" height="114" rx="10" fill="#0f172a"/>
+        <text x="861" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#fbcfe8">Total: 8,577 params</text>
+        <text x="861" y="60" text-anchor="middle" font-size="11" fill="#fff">Adam (lr = 0.003) | MSE</text>
+        <text x="861" y="78" text-anchor="middle" font-size="11" fill="#5eead4">Lotes: batch_size = 32</text>
+        <text x="861" y="96" text-anchor="middle" font-size="11" fill="#fff">Épocas máx: 200 (Val 20%)</text>
+        <text x="861" y="114" text-anchor="middle" font-size="10.5" fill="#fcd34d">EarlyStopping (p=20)</text>
+      </svg>
+    </div>
+
+    <div class="grid-2">
+      <div class="panel">
+        <h3 class="sub-title">¿Se especifican lotes? ¿De qué tamaño son? (<code>batch_size = 32</code>)</h3>
+        <p style="margin:0.25rem 0;font-size:0.9rem;">
+          <span class="tag-dummy">En sencillo</span> Imagina estudiar 916 tarjetas de perfumes: en vez de ajustar tus apuntes después de cada tarjeta (muy lento y caótico) o esperar a leer las 916 para corregir un solo error (muy lento en mejorar), las agrupas en <strong>paquetes ("lotes") de 32 tarjetas</strong>.
+        </p>
+        <ul style="margin:0.35rem 0 0 1.15rem;padding:0;font-size:0.89rem;">
+          <li><strong>Cálculo exacto en <code>3_red_neuronal.py</code>:</strong> De las <code>1,145</code> filas de <code>X_train</code>, Keras aparta el 20% (<code>229</code> filas) para validación (<code>validation_split=0.20</code>), dejando <strong><code>916</code> filas</strong> para entrenar.</li>
+          <li><strong><code>916 ÷ 32</code> = 28 lotes completos de 32 + 1 lote final de 20 = <code>29</code> lotes por época.</strong></li>
+          <li><strong>Qué ocurre en cada lote:</strong> el optimizador <code>Adam (lr=0.003)</code> calcula el error MSE de esos 32 perfumes y actualiza los <code>8,577</code> pesos una vez. En 72 épocas hace <code>72 × 29 = 2,088</code> actualizaciones.</li>
+          <li><strong>¿Por qué 32?</strong> Es el tamaño estándar equilibrado: da actualizaciones frecuentes con ruido controlado que ayudan a escapar de mínimos malos sin tardar demasiado.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h3 class="sub-title">¿Qué son las épocas y por qué colocamos <code>EPOCHS = 200</code>?</h3>
+        <p style="margin:0.25rem 0;font-size:0.9rem;">
+          <span class="tag-dummy">En sencillo</span> <strong>1 época</strong> = darle 1 vuelta completa a los 916 perfumes de entrenamiento (sus 29 lotes) y luego evaluarse en los 229 perfumes de validación sin hacer trampa.
+        </p>
+        <ul style="margin:0.35rem 0 0 1.15rem;padding:0;font-size:0.89rem;">
+          <li><strong>¿Por qué pusimos <code>EPOCHS = 200</code>?</strong> Porque <strong>200 es un techo máximo de seguridad, no un número fijo obligatorio</strong>.</li>
+          <li>Si hubiéramos puesto solo <code>20</code> épocas, la red aún seguiría bajando su error (época 1: <code>Val MSE = 9301.32</code> → época 20: <code>949.31</code> → época 52: <code>876.19</code>), quedando corta (<em>underfitting</em>).</li>
+          <li>Al poner <code>200</code> junto con <code>EarlyStopping(monitor="val_loss", patience=20, restore_best_weights=True)</code>, le damos espacio suficiente para converger sabiendo que <strong>se detendrá automáticamente</strong> apenas deje de mejorar en validación.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout amber" style="margin-top:1rem;">
+      <h3>¿Por qué la mejor época es la 52 si corrió hasta la 72? ¿No se quedó con el overfitting de la 72?</h3>
+      <p style="margin:0.35rem 0;font-size:0.9rem;">
+        <span class="tag-dummy">Para dummies</span> Un corredor logra su récord personal en el intento <strong>52</strong>. Como en los entrenamientos hay días buenos y malos (en el intento 49 tuvo un día flojo antes de romper el récord en el 52), el entrenador le da <strong>20 intentos extra de margen</strong> (<code>patience=20</code>). Al llegar al intento <strong>72</strong> sin romper la marca del 52, detiene la práctica y <strong>registra oficialmente los músculos y tiempos del intento 52</strong>, borrando los 20 intentos flojos.
+      </p>
+      <p style="margin:0.35rem 0 0;font-size:0.89rem;">
+        <span class="tag-tech">En técnico</span> <code>mejor_epoca = int(np.argmin(val_loss_h)) + 1</code> detectó el mínimo de <code>val_loss</code> en la <strong>época 52</strong> (<code>Val MSE = 876.19</code>, <code>Val MAE = $18.59 USD</code>), mientras <code>Train MSE</code> seguía bajando hasta <code>646.39</code> en la 69 (señal de inicio de memorización). Como con <code>Adam</code> + <code>Dropout</code> la curva oscila (época 45: <code>881.01</code> → época 49: <code>923.75</code> → época 52: <code>876.19</code>), usar <code>patience=1</code> habría cortado prematuramente en la <strong>época 18</strong> (<code>992.16</code>). Y gracias a <strong><code>restore_best_weights=True</code></strong>, al frenar en la época 72 Keras descarta las épocas 53–72 y <strong>rebobina los 8,577 pesos a los de la época 52</strong> antes de evaluar <code>X_test</code>.
+      </p>
+    </div>
+
+    <div class="panel" style="margin-top:1rem;">
+      <h3 class="sub-title">¿Qué variables toman MÁS PESO en la Red Neuronal? (Medido realmente sobre el modelo entrenado)</h3>
+      <p style="margin:0.2rem 0 0.6rem;font-size:0.9rem;">
+        <span class="tag-dummy">En sencillo</span> A diferencia de la Regresión Lineal, una Red Neuronal no tiene una sola pendiente por variable porque cada entrada se reparte por 64 neuronas y luego 32. Para medir exactamente qué variables le importan más a nuestra red ya entrenada, usamos <strong>Importancia por Permutación sobre <code>X_test</code></strong> (desordenamos al azar 1 variable a la vez —15 repeticiones— y medimos cuánto empeora el error <code>RMSE</code> de base <code>$33.85 USD</code> y cuánto cae <code>R² = 0.7662</code>) y la <strong>magnitud de pesos de entrada (<code>||W1||₂</code>)</strong>:
+      </p>
+      <div class="grid-2">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Variable original (agrupada)</th>
+                <th>Cols</th>
+                <th>Empeora RMSE al quitarla</th>
+                <th>Cae R²</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="win-row"><td>1. <code>brand_name</code> (Marca)</td><td>77</td><td class="neg">+$35.64 USD</td><td>-0.7517</td></tr>
+              <tr><td>2. <code>tertiary_category</code> (Tipo: Perfume, Vela...)</td><td>7</td><td class="neg">+$19.66 USD</td><td>-0.3514</td></tr>
+              <tr><td>3. <code>child_count</code> (Cantidad de tamaños)</td><td>1</td><td>+$5.97 USD</td><td>-0.0899</td></tr>
+              <tr><td>4. <code>secondary_category</code> (Mujer, Hombre...)</td><td>4</td><td>+$3.94 USD</td><td>-0.0577</td></tr>
+              <tr><td>5. <code>sephora_exclusive</code></td><td>1</td><td>+$1.74 USD</td><td>-0.0248</td></tr>
+              <tr><td>6. <code>limited_edition</code></td><td>1</td><td>+$1.18 USD</td><td>-0.0166</td></tr>
+              <tr><td>7. <code>online_only</code> / <code>new</code></td><td>1+1</td><td>+$0.60 / +$0.54</td><td>-0.008</td></tr>
+              <tr><td>8. <code>variation_type</code> / <code>loves_count</code> / <code>reviews</code> / <code>rating</code></td><td>4+3</td><td>+$0.24 a -$0.12</td><td>~0.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div class="svg-box" style="margin:0;padding:0.65rem;">
+            <svg viewBox="0 0 470 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Importancia de variables en la Red Neuronal">
+              <text x="235" y="20" text-anchor="middle" font-size="12.5" font-weight="700" fill="#0f172a">Peso Real en la Red Neuronal (+Δ RMSE al permutar)</text>
+              <text x="125" y="54" text-anchor="end" font-size="11.5" font-weight="700" fill="#be185d">brand_name</text>
+              <rect x="132" y="40" width="265" height="20" rx="4" fill="#be185d"/>
+              <text x="403" y="54" font-size="11" font-weight="700" fill="#0f172a">+$35.64</text>
+
+              <text x="125" y="86" text-anchor="end" font-size="11.5" font-weight="700" fill="#0f766e">tertiary_category</text>
+              <rect x="132" y="72" width="146" height="20" rx="4" fill="#0f766e"/>
+              <text x="284" y="86" font-size="11" font-weight="700" fill="#0f172a">+$19.66</text>
+
+              <text x="125" y="118" text-anchor="end" font-size="11.5" fill="#1e293b">child_count</text>
+              <rect x="132" y="104" width="45" height="20" rx="4" fill="#0f172a"/>
+              <text x="183" y="118" font-size="11" fill="#0f172a">+$5.97</text>
+
+              <text x="125" y="150" text-anchor="end" font-size="11.5" fill="#1e293b">secondary_category</text>
+              <rect x="132" y="136" width="30" height="20" rx="4" fill="#334155"/>
+              <text x="168" y="150" font-size="11" fill="#0f172a">+$3.94</text>
+
+              <text x="125" y="182" text-anchor="end" font-size="11.5" fill="#1e293b">sephora_exclusive</text>
+              <rect x="132" y="168" width="14" height="20" rx="4" fill="#64748b"/>
+              <text x="152" y="182" font-size="11" fill="#0f172a">+$1.74</text>
+
+              <text x="125" y="214" text-anchor="end" font-size="11.5" fill="#1e293b">limited_edition</text>
+              <rect x="132" y="200" width="10" height="20" rx="4" fill="#64748b"/>
+              <text x="148" y="214" font-size="11" fill="#0f172a">+$1.18</text>
+
+              <text x="235" y="242" text-anchor="middle" font-size="10.2" fill="#475569">Top normas Capa 1 (||W1||₂): KILIAN Paris (5.37), TOM FORD (4.45), VOLUSPA (3.81), Travel Size (3.72)</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: COMPARATIVA Y MÉTRICAS -->
+  <section id="comparativa">
+    <h2><span class="sec-num">5</span> Comparativa Final (<code>4_comparacion.py</code>) y Aclaración de Métricas</h2>
+
+    <div class="grid-2">
+      <div class="callout teal" style="margin-top:0;">
+        <h3>¿Por qué MSE, RMSE, MAE y R² y NO exactitud / precisión / exhaustividad?</h3>
+        <p style="margin:0.35rem 0;font-size:0.9rem;">
+          <span class="tag-dummy">Para dummies</span> Si adivinas si una foto es <em>perro o gato</em> (<strong>clasificación</strong>), cuentas aciertos (<em>Accuracy, Precision, Recall</em>). Pero aquí adivinamos un <strong>precio en dólares</strong> (<strong>regresión</strong>): si el perfume vale $100 y el modelo dice $99, no es "fallo", ¡le faltó $1! Por eso medimos distancia en USD:
+        </p>
+        <ul style="margin:0.3rem 0 0 1.15rem;padding:0;font-size:0.88rem;">
+          <li><strong>MAE ($21.02):</strong> error promedio absoluto en dólares.</li>
+          <li><strong>RMSE ($33.85):</strong> desviación típica del error en dólares (raíz de <strong>MSE = 1145.83</strong>; castiga más fallos grandes).</li>
+          <li><strong>R² (0.7662):</strong> explica el 76.62% de la variación real de los precios en Test.</li>
+        </ul>
+      </div>
+
+      <div class="callout" style="margin-top:0;">
+        <h3>¿Por qué la Red Neuronal tiene 72 épocas y Regresión Lineal NO?</h3>
+        <p style="margin:0.35rem 0;font-size:0.9rem;">
+          <span class="tag-dummy">Para dummies</span> <code>LinearRegression</code> calcula su recta óptima en <strong>1 sola operación matemática cerrada (SVD)</strong>, sin repasar por rondas; por eso <code>4_comparacion.py</code> muestra su <strong>curva de aprendizaje</strong> dándole del <code>20%</code> al <code>100%</code> de los datos (<code>Val RMSE</code> baja de <code>$40.39</code> a <code>$33.73</code> y <code>Val R²</code> sube de <code>0.5855</code> a <code>0.7110</code>). En cambio, la Red Neuronal ajusta sus <code>8,577</code> perillas paso a paso durante <strong>72 épocas</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="svg-box">
+      <svg viewBox="0 0 960 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparación visual entrenamiento SVD vs Épocas">
+        <rect x="10" y="10" width="455" height="195" rx="10" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+        <text x="237" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0f766e">Regresión Lineal: Curva de Aprendizaje (1 paso SVD)</text>
+        <line x1="60" y1="164" x2="430" y2="164" stroke="#64748b" stroke-width="1.3"/>
+        <line x1="60" y1="54" x2="60" y2="164" stroke="#64748b" stroke-width="1.3"/>
+        <polyline fill="none" stroke="#0f766e" stroke-width="3" points="85,70 165,110 245,120 325,127 405,136"/>
+        <circle cx="85" cy="70" r="5" fill="#0f766e"/><text x="85" y="60" text-anchor="middle" font-size="10.5" fill="#0f172a" font-weight="700">20%: $40.39</text>
+        <circle cx="165" cy="110" r="5" fill="#0f766e"/><text x="165" y="100" text-anchor="middle" font-size="10.5" fill="#0f172a">40%: $35.89</text>
+        <circle cx="245" cy="120" r="5" fill="#0f766e"/><text x="245" y="110" text-anchor="middle" font-size="10.5" fill="#0f172a">60%: $35.02</text>
+        <circle cx="325" cy="127" r="5" fill="#0f766e"/><text x="325" y="117" text-anchor="middle" font-size="10.5" fill="#0f172a">80%: $34.49</text>
+        <circle cx="405" cy="136" r="5" fill="#0f766e"/><text x="405" y="153" text-anchor="middle" font-size="10.5" fill="#0f766e" font-weight="700">100%: $33.73 (R²=0.71)</text>
+        <text x="245" y="190" text-anchor="middle" font-size="11" fill="#334155">Más perfumes en Train → menor error en validación interna</text>
+
+        <rect x="495" y="10" width="455" height="195" rx="10" fill="#fdf2f8" stroke="#be185d" stroke-width="1.6"/>
+        <text x="722" y="34" text-anchor="middle" font-size="13.5" font-weight="700" fill="#be185d">Red Neuronal MLP: Descenso Época por Época (1 a 72)</text>
+        <line x1="545" y1="164" x2="915" y2="164" stroke="#64748b" stroke-width="1.3"/>
+        <line x1="545" y1="54" x2="545" y2="164" stroke="#64748b" stroke-width="1.3"/>
+        <path d="M 555,60 Q 585,126 640,134 T 800,139 L 900,138" fill="none" stroke="#be185d" stroke-width="3"/>
+        <line x1="800" y1="56" x2="800" y2="164" stroke="#d97706" stroke-width="2" stroke-dasharray="5,4"/>
+        <circle cx="555" cy="60" r="5" fill="#be185d"/><text x="615" y="66" font-size="10.5" fill="#0f172a" font-weight="700">Ép.1: Val MSE 9301</text>
+        <circle cx="800" cy="139" r="6" fill="#d97706"/><text x="796" y="120" text-anchor="middle" font-size="10.5" fill="#b45309" font-weight="700">Mejor Ép. 52: 876.19</text>
+        <text x="892" y="155" text-anchor="middle" font-size="10" fill="#475569">Ép.72</text>
+        <text x="722" y="190" text-anchor="middle" font-size="11" fill="#334155">Adam (29 lotes/época); EarlyStopping restaura época 52</text>
       </svg>
     </div>
 
@@ -638,73 +889,52 @@
       <tbody>
         <tr>
           <td>Baseline ingenuo (predecir media de Train = $86.77)</td>
-          <td>4907.91</td>
-          <td>$70.06</td>
-          <td>$53.56</td>
-          <td>-0.0012</td>
-          <td>—</td>
-          <td>—</td>
-          <td>0</td>
-          <td>—</td>
+          <td>4907.91</td><td>$70.06</td><td>$53.56</td><td>-0.0012</td><td>—</td><td>—</td><td>0</td><td>—</td>
         </tr>
         <tr>
           <td>Regresión Lineal Múltiple (Scikit-Learn)</td>
-          <td>1325.13</td>
-          <td>$36.40</td>
-          <td>$24.76</td>
-          <td>0.7297</td>
-          <td>0.7072</td>
-          <td>-0.0225</td>
-          <td>8</td>
-          <td>~0.05–0.07 s</td>
+          <td>1325.13</td><td>$36.40</td><td>$24.76</td><td>0.7297</td><td>0.7072</td><td>-0.0225</td><td>8</td><td>~0.05–0.07 s</td>
         </tr>
         <tr class="win-row">
           <td>Red Neuronal MLP (TensorFlow/Keras) — GANADOR</td>
-          <td>1145.83</td>
-          <td>$33.85</td>
-          <td>$21.02</td>
-          <td>0.7662</td>
-          <td>0.8248</td>
-          <td>+0.0586</td>
-          <td>0</td>
-          <td>~10.1–11.5 s</td>
+          <td>1145.83</td><td>$33.85</td><td>$21.02</td><td>0.7662</td><td>0.8248</td><td>+0.0586</td><td>0</td><td>~10.1–11.5 s</td>
         </tr>
       </tbody>
     </table>
 
     <div class="callout amber">
-      <h3>¡Cuidado en la sustentación: NO mezcles Validación con Test!</h3>
-      <p style="margin:0;font-size:0.92rem;">
-        • <strong>Validación interna (<code>validation_split=0.20</code> dentro de Train):</strong> sirve solo para monitorear las 72 épocas y detener en la <strong>época 52</strong> con <code>Val MSE = 876.19</code> y <code>Val MAE = $18.59 USD</code>.<br />
-        • <strong>Prueba final (<code>X_test</code>, 287 muestras nunca vistas):</strong> es el examen real que aparece en la tabla comparativa: <code>Test MSE = 1145.83</code>, <code>Test RMSE = $33.85 USD</code>, <code>Test MAE = $21.02 USD</code> y <code>Test R² = 0.7662</code>.
+      <h3>¡No mezcles Validación con Test al exponer!</h3>
+      <p style="margin:0;font-size:0.9rem;">
+        • <strong>Validación interna (<code>validation_split=0.20</code> = 229 filas de Train):</strong> se usa solo durante el entrenamiento para elegir la <strong>época 52</strong> (<code>Val MSE = 876.19</code>, <code>Val MAE = $18.59 USD</code>).<br />
+        • <strong>Test final (<code>X_test</code> = 287 filas secretas):</strong> es la evaluación justa de la tabla: <code>Test MSE = 1145.83</code>, <code>Test RMSE = $33.85 USD</code>, <code>Test MAE = $21.02 USD</code> y <code>Test R² = 0.7662</code>.
       </p>
     </div>
   </section>
 
-  <!-- SECCIÓN 5 -->
+  <!-- SECCIÓN 6: GUION PAREJA -->
   <section id="guion">
-    <h2><span class="sec-num">5</span> Guion Repartido para Sustentación en Pareja (5–8 min c/u)</h2>
+    <h2><span class="sec-num">6</span> Guion Repartido de Sustentación en Pareja (5–8 min c/u) + Demo en Vivo</h2>
     <div class="grid-2">
       <div class="panel role-card">
-        <h3><span>Integrante A — Negocio, Datos y Modelo Clásico</span><span class="pill pill-a">Slides 1–5 • ~6 min</span></h3>
-        <ol style="padding-left:1.2rem;font-size:0.91rem;">
-          <li><strong>Apertura y pregunta (1 min):</strong> Presentar el objetivo: predecir <code>price_usd</code> en Sephora a partir de marca, categoría y popularidad; aclarar que al ser precio continuo es <strong>regresión</strong> (métricas MSE, RMSE, MAE, R²).</li>
-          <li><strong>Dataset y auditoría (1.5 min):</strong> Explicar que <code>sephora_fragrance.csv</code> tiene 1,432 filas, 12 variables mixtas (8 numéricas + 4 categóricas), 2.13% nulos reales y 0 fuga de datos (se quitaron IDs y precios derivados).</li>
-          <li><strong>Preprocesamiento sin trampas (1.5 min):</strong> Recalcar el orden en <code>1_preprocesamiento.py</code>: <strong>primero</strong> split 80/20 (<code>random_state=412</code>), <strong>luego</strong> <code>SimpleImputer</code> (mediana/moda), One-Hot (92 dummies) y <code>StandardScaler</code> ajustados solo en Train.</li>
-          <li><strong>Modelo clásico (2 min):</strong> Mostrar resultados de <code>LinearRegression</code> (<code>Test R²=0.7297</code>, <code>MAE=$24.76</code>, sin overfitting), destacar coeficientes clave en USD (<code>TOM FORD +$85.68</code>, <code>Diffusers +$99.77</code>) y mencionar las 8 predicciones negativas como puente al modelo neuronal.</li>
+        <h3><span>Integrante A — Preprocesamiento y Regresión Lineal</span><span class="pill pill-a">Slides 1–5 • ~6 min</span></h3>
+        <ol style="padding-left:1.2rem;font-size:0.9rem;">
+          <li><strong>Negocio y tipo de problema (1 min):</strong> Predecir <code>price_usd</code> en Sephora; regresión continua (métricas MSE, RMSE, MAE, R²).</li>
+          <li><strong>Dataset y anti-leakage (1.5 min):</strong> 1,432 filas, 12 entradas (8 numéricas + 4 categóricas), 2.13% nulos reales, sin IDs ni precios derivados; dividir 80/20 (<code>seed=412</code>) <em>antes</em> de imputar y escalar.</li>
+          <li><strong>De dónde salen las 100 columnas (1.5 min):</strong> 8 numéricas con <code>StandardScaler</code> + <strong>92 dummies</strong> de One-Hot con <code>drop_first=True</code> (<strong>77</strong> solo de marca <code>brand_name</code>, 4 de <code>secondary</code>, 7 de <code>tertiary</code>, 4 de <code>variation_type</code>).</li>
+          <li><strong>Regresión Lineal (2 min):</strong> Ecuación de 1 intercepto (<code>+$43.76 USD</code>) y 100 pendientes parciales calculadas en 1 paso SVD; resaltar <code>child_count +$10.31</code>, <code>Women +$90.94</code>, <code>TOM FORD +$85.68</code>, mostrar el ejemplo real de <code>$157.75 USD</code>, <code>Test R²=0.7297</code> y las 8 predicciones negativas.</li>
         </ol>
         <div class="say-box">
-          Frase de pase: «Como la ecuación lineal asume efectos puramente sumados y generó 8 precios negativos en casos extremos, mi compañero/a mostrará si una Red Neuronal no lineal logra capturar estas interacciones y mejorar la predicción.»
+          Pase: «Como la ecuación lineal suma efectos rígidos y generó 8 precios negativos, Integrante B mostrará cómo una Red Neuronal captura interacciones no lineales y mejora el error.»
         </div>
       </div>
 
       <div class="panel role-card">
-        <h3><span>Integrante B — Red Neuronal, Demo en Vivo y Conclusión</span><span class="pill pill-b">Slides 6–10 • ~6–7 min</span></h3>
-        <ol style="padding-left:1.2rem;font-size:0.91rem;">
-          <li><strong>Arquitectura Keras (1.5 min):</strong> Explicar el MLP <code>Sequential</code> (<code>100 → 64 ReLU → Drop 0.1 → 32 ReLU → Drop 0.1 → 1 Linear</code>, 8,577 parámetros), <code>Adam(lr=0.003)</code>, L2 (0.01) y semilla 412 determinista.</li>
-          <li><strong>Evolución y épocas (1.5 min):</strong> Explicar sencillo por qué el MLP muestra 72 épocas (mejor época 52: <code>Val MSE=876.19</code>) mientras <code>LinearRegression</code> resuelve en 1 paso SVD (curva 20%–100%).</li>
-          <li><strong>Ejecución en vivo (1.5 min):</strong> Abrir la terminal en la raíz del proyecto, correr el comando de abajo y mostrar en vivo las tablas impresas por <code>4_comparacion.py</code>.</li>
-          <li><strong>Comparativa y veredicto (1.5 min):</strong> Resaltar el triunfo de la Red Neuronal (<code>R²=0.7662</code>, <code>-15.09%</code> en MAE, <code>0</code> negativas) y el compromiso frente a la velocidad e interpretabilidad de <code>LinearRegression</code>.</li>
+        <h3><span>Integrante B — Red Neuronal, Demo en Vivo y Veredicto</span><span class="pill pill-b">Slides 6–10 • ~6–7 min</span></h3>
+        <ol style="padding-left:1.2rem;font-size:0.9rem;">
+          <li><strong>Arquitectura y lotes (1.5 min):</strong> MLP <code>100 → 64 ReLU → Drop 0.1 → 32 ReLU → Drop 0.1 → 1 Linear</code> (8,577 params), <code>batch_size=32</code> (29 lotes por época sobre las 916 filas de entrenamiento interno) y L2=0.01.</li>
+          <li><strong>200 épocas, época 52 y pesos clave (1.5 min):</strong> 200 como techo máximo controlado por <code>EarlyStopping(patience=20, restore_best_weights=True)</code>; cómo rebobinó de la 72 a la 52; y resaltar que las variables con mayor peso en la red son <code>brand_name</code> (+$35.64 RMSE) y <code>tertiary_category</code> (+$19.66).</li>
+          <li><strong>Demo en vivo (1.5 min):</strong> Ejecutar el comando abajo y mostrar las 72 épocas, la curva SVD y la tabla final determinista.</li>
+          <li><strong>Veredicto (1.5 min):</strong> Ganadora MLP (<code>R²=0.7662</code>, <code>MAE=$21.02</code>, <code>0</code> negativas, -15.09% MAE) vs. rapidez e interpretabilidad de <code>LinearRegression</code>.</li>
         </ol>
         <pre id="demoCmd">.\.venv\Scripts\python.exe 4_comparacion.py</pre>
         <button class="primary" id="btnCopyCmd" style="font-size:0.82rem;">Copiar comando de Demo en Vivo</button>
@@ -713,36 +943,47 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 6 -->
+  <!-- SECCIÓN 7: DICCIONARIO Y RESPALDO -->
   <section id="diccionario">
-    <h2><span class="sec-num">6</span> Diccionario Técnico Buscable (Sencillo + Técnico)</h2>
+    <h2><span class="sec-num">7</span> Diccionario Técnico Buscable y Respaldo de Decisiones</h2>
     <div class="filter-bar">
-      <input type="search" id="dictSearch" placeholder="Buscar término (ej. leakage, SVD, ReLU, R², Dropout...)" style="min-width:300px;flex:1;" />
+      <input type="search" id="dictSearch" placeholder="Buscar término (ej. pendiente, lote, 92, EarlyStopping, SVD, ReLU...)" style="min-width:300px;flex:1;" />
       <span id="dictCount" style="font-size:0.85rem;color:var(--muted);font-weight:600;"></span>
     </div>
     <div class="dict-grid" id="dictGrid"></div>
+
+    <details class="q-card" style="margin-top:1.1rem;border-left:5px solid var(--navy);">
+      <summary>
+        <span>Respaldo adicional: ¿Por qué descartamos el primer <code>sephora.csv</code> y por qué NO usamos Random Forest? (Click para abrir si el docente pregunta)</span>
+        <span class="q-cat">Respaldo metodológico</span>
+      </summary>
+      <div class="q-body">
+        <p style="margin:0 0 0.45rem;"><strong>1. Descarte del <code>sephora.csv</code> inicial:</strong> Solo traía 4,371 tonos de bases de maquillaje en texto, sin precios ni columnas numéricas, con 38.85% de nulos en <code>name</code>. Por eso elegimos el subconjunto <code>Fragrance</code> del catálogo Sephora en Kaggle (<code>1,432</code> filas, <code>12</code> entradas mixtas, <code>2.13%</code> nulos reales, <code>0</code> fuga de datos).</p>
+        <p style="margin:0;"><strong>2. Por qué <code>LinearRegression</code> y no Random Forest:</strong> Además de la restricción del proyecto, con 92 columnas dummy de 79 marcas y solo 1,145 filas de Train, Random Forest fragmentaría los datos en hojas pequeñas y comprimiría extremos ($300–$395). <code>LinearRegression</code> estima las 100 pendientes simultáneamente sin overfitting (<code>Train R²=0.7072</code> vs <code>Test R²=0.7297</code>), entrega coeficientes directos en USD y ofrece un contraste limpio (lineal vs. no lineal) frente al MLP de Keras.</p>
+      </div>
+    </details>
   </section>
 
-  <!-- SECCIÓN 7 -->
+  <!-- SECCIÓN 8: BANCO DE 22 PREGUNTAS -->
   <section id="preguntas">
-    <h2><span class="sec-num">7</span> Banco Interactivo de Preguntas del Docente (19 Preguntas)</h2>
+    <h2><span class="sec-num">8</span> Banco Interactivo de Preguntas del Docente (22 Preguntas)</h2>
     <div class="filter-bar" id="qFilterBar">
-      <button class="filter-btn active" data-cat="Todas">Todas (19)</button>
-      <button class="filter-btn" data-cat="Teoría y Métricas">Teoría y Métricas</button>
-      <button class="filter-btn" data-cat="Datos y Preprocesamiento">Datos y Preprocesamiento</button>
-      <button class="filter-btn" data-cat="Código y Arquitectura">Código y Arquitectura</button>
-      <button class="filter-btn" data-cat="Negocio y Comparativa">Negocio y Comparativa</button>
+      <button class="filter-btn active" data-cat="Todas">Todas (22)</button>
+      <button class="filter-btn" data-cat="Preprocesamiento y Datos">Preprocesamiento y Datos</button>
+      <button class="filter-btn" data-cat="Regresión Lineal">Regresión Lineal</button>
+      <button class="filter-btn" data-cat="Red Neuronal">Red Neuronal</button>
+      <button class="filter-btn" data-cat="Métricas y Comparativa">Métricas y Comparativa</button>
       <input type="search" id="qSearch" placeholder="Filtrar pregunta..." style="min-width:220px;flex:1;" />
     </div>
     <div id="questionsContainer"></div>
 
-    <div class="callout teal" style="margin-top:1.3rem;">
+    <div class="callout teal" style="margin-top:1.25rem;">
       <h3>Checklist Final para el Día de la Sustentación (24 de noviembre)</h3>
-      <ul style="margin:0.3rem 0 0 1.15rem;padding:0;font-size:0.91rem;">
-        <li>Tener abierta la terminal en la raíz del proyecto con el entorno virtual listo y probado (<code>.\.venv\Scripts\python.exe 4_comparacion.py</code>).</li>
-        <li>Tener abierta <code>Presentacion_Taller_ML.pptx</code> (cambiando antes los nombres reales en lugar de <em>Integrante A / Integrante B</em> si lo desean).</li>
-        <li>Verificar que entregan el archivo <code>proyecto_machine_learning.zip</code> limpio (sin <code>.venv</code>, sin <code>.ipynb</code> y con los 12 archivos oficiales dentro).</li>
-        <li>Mantener separadas en mente las cifras de <strong>Validación</strong> (época 52: <code>Val MSE=876.19</code>) y de <strong>Test no visto</strong> (<code>Test MSE=1145.83</code>, <code>R²=0.7662</code>).</li>
+      <ul style="margin:0.3rem 0 0 1.15rem;padding:0;font-size:0.9rem;">
+        <li>Tener abierta la terminal en la raíz del proyecto y probada (<code>.\.venv\Scripts\python.exe 4_comparacion.py</code>).</li>
+        <li>Abrir <code>Presentacion_Taller_ML.pptx</code> (cambiando los nombres reales en portada si lo desean).</li>
+        <li>Subir <code>proyecto_machine_learning.zip</code> limpio (12 archivos oficiales, 0 <code>.ipynb</code>, sin <code>.venv</code>).</li>
+        <li>Recordar las cifras clave de memoria: <strong>92 dummies (77 marcas)</strong>, <strong>β₀=+$43.76</strong>, <strong>batch_size=32 (29 lotes)</strong>, <strong>época 52 restaurada</strong> y ganador <strong>MLP Test R²=0.7662 / MAE=$21.02</strong>.</li>
       </ul>
     </div>
   </section>
@@ -810,30 +1051,32 @@
     setTimeout(() => { msg.textContent = ""; }, 2500);
   });
 
-  // === DICCIONARIO (22 TÉRMINOS) ===
+  // === DICCIONARIO (24 TÉRMINOS) ===
   const TERMINOS = [
-    { t: "Data Leakage (Fuga de datos)", s: "Cuando el modelo 'hace trampa' viendo pistas del examen o del futuro antes de tiempo.", tc: "Se evita haciendo train_test_split antes de imputar/escalar y excluyendo value_price_usd o sale_price_usd." },
-    { t: "Train / Validación / Test", s: "Libro de estudio (Train), simulacro interno (Validación) y examen final secreto (Test).", tc: "Train=1,145 (80% de 1,432), Test=287 (20%). Keras toma 20% interno de Train como validation_split." },
-    { t: "SimpleImputer (Mediana y Moda)", s: "Rellenador automático de huecos usando el valor típico del grupo de estudio.", tc: "Mediana para numéricas (rating=4.3333, reviews=49.0) y moda para categóricas, ajustado solo en X_train." },
-    { t: "One-Hot Encoding (OHE)", s: "Convierte palabras como marca o categoría en columnas de 0 y 1 para que la matemática las entienda.", tc: "92 columnas dummy binarias con pd.Categorical + pd.get_dummies(dtype=int) + reindex para Test." },
-    { t: "drop_first=True", s: "Quita una columna redundante por categoría para evitar información repetida.", tc: "Elimina multicolinealidad perfecta (trampa de las variables dummy) en la matriz de diseño de LinearRegression." },
-    { t: "StandardScaler", s: "Pone todos los números en la misma regla (media 0, escala 1) para que loves_count no aplaste a rating.", tc: "Transformación z = (x - μ_train) / σ_train aplicada únicamente a las 8 numéricas." },
-    { t: "Regresión Lineal Múltiple", s: "Calcula el precio sumando un precio base más lo que aporta o resta cada característica.", tc: "ŷ = β₀ + Σ βᵢxᵢ ajustado por mínimos cuadrados ordinarios (OLS) en Scikit-Learn." },
-    { t: "SVD (Solución analítica cerrada)", s: "Método matemático directo que halla los pesos óptimos en una sola operación, sin iterar por épocas.", tc: "Descomposición en valores singulares usada por LinearRegression.fit(); tarda ~0.05–0.07 s." },
-    { t: "Intercepto (β₀) y Coeficientes", s: "β₀ es el precio de partida (+$43.76) y cada coeficiente es cuántos dólares suma o resta ese atributo.", tc: "TOM FORD suma +$85.68 USD y Diffusers +$99.77 USD respecto a las categorías de referencia." },
-    { t: "Overfitting (Sobreajuste)", s: "Cuando un modelo memoriza los ejemplos de estudio pero falla al ver productos nuevos.", tc: "Se controla comparando Train R² vs Test R²: OLS tuvo brecha -0.0225 y el MLP +0.0586." },
-    { t: "Baseline Ingenuo", s: "El rival más simple posible: predecir siempre el precio promedio ($86.77) para todo perfume.", tc: "Sirve de piso mínimo: obtuvo Test R² = -0.0012 y RMSE = $70.06; ambos modelos lo duplican en calidad." },
-    { t: "Red Neuronal MLP (Sequential)", s: "Red de neuronas artificiales por capas conectadas en secuencia que aprende patrones curvos.", tc: "Input(100) → Dense(64, ReLU) → Dropout(0.1) → Dense(32, ReLU) → Dropout(0.1) → Dense(1, linear)." },
-    { t: "Activación ReLU", s: "Interruptor sencillo: deja pasar valores positivos y apaga negativos, creando curvas no lineales.", tc: "f(x) = max(0, x). Permite al MLP modelar interacciones como marca × subcategoría." },
-    { t: "Capa de Salida Lineal", s: "Última neurona sin tope, necesaria para poder devolver cualquier precio continuo en dólares.", tc: "Dense(1, activation='linear') adecuada para regresión (Sigmoide/Softmax son para clasificación)." },
-    { t: "Optimizador Adam", s: "Piloto automático inteligente que ajusta los 8,577 pesos época por época reduciendo el error.", tc: "Gradiente estocástico adaptativo con learning_rate=0.003 minimizando la pérdida MSE." },
-    { t: "Época y Batch Size", s: "1 época = 1 repaso completo del material de estudio, en lotes de 32 perfumes a la vez.", tc: "Con batch_size=32 y ~916 filas de entrenamiento interno, cada época hace ~29 actualizaciones de pesos." },
-    { t: "Regularización L2 (0.01)", s: "Multa a la red si le da demasiada fuerza a un solo peso, evitando que memorice.", tc: "Penaliza λ·Σw² en la función de pérdida para mantener pesos pequeños y suaves." },
-    { t: "Dropout (0.10)", s: "Apaga al azar el 10% de las neuronas durante el entrenamiento para que no dependan unas de otras.", tc: "Solo actúa en fit (training=True); durante predict() se usan todas las neuronas escaladas." },
-    { t: "EarlyStopping (patience=20)", s: "Freno automático que para el entrenamiento si Validación no mejora en 20 épocas y guarda lo mejor.", tc: "Detuvo el MLP en la época 72 y restauró automáticamente los pesos óptimos de la época 52." },
-    { t: "MSE, RMSE, MAE y R²", s: "Las 4 reglas de regresión: error cuadrático, error típico en USD, error promedio en USD y % explicado.", tc: "Ganador MLP en Test: MSE=1145.83, RMSE=$33.85, MAE=$21.02, R²=0.7662." },
-    { t: "Semilla 412 y Determinismo", s: "Número fijo para que la aleatoriedad sea idéntica cada vez que ejecutas el código.", tc: "random_state=412 en split y set_random_seed(412) + enable_op_determinism() dentro de evaluar_red_neuronal." },
-    { t: "importlib.import_module", s: "Permite que 4_comparacion.py importe archivos cuyo nombre empieza por un número (2_, 3_).", tc: "Python no permite 'import 2_modelo_clasico' directo; importlib resuelve la carga modular exigida por el PDF." }
+    { t: "92 columnas dummy (100 totales)", s: "Cada opción de texto se vuelve columna de 0 y 1; como hay 78 marcas en Train, salen 77 columnas solo de marcas.", tc: "77 (brand_name) + 4 (secondary) + 7 (tertiary) + 4 (variation_type) = 92 dummies + 8 numéricas = 100 columnas." },
+    { t: "drop_first=True (Categoría de referencia)", s: "Se quita 1 columna por grupo porque si todas las demás valen 0, ya sabemos cuál tocó por descarte.", tc: "Evita multicolinealidad perfecta. Referencias omitidas: '19-69', 'Candles & Home Scents', 'Body Mist & Hair Mist' y 'Color'." },
+    { t: "Intercepto (β₀ = +$43.76 USD)", s: "El precio base desde donde empieza a sumar o restar la Regresión Lineal.", tc: "Predicción cuando todas las 8 numéricas valen z=0 (promedio de Train) y aplican las 4 categorías de referencia." },
+    { t: "Pendientes parciales (β₁ ... β₁₀₀)", s: "Cuánto sube o baja el precio por cada característica manteniendo todas las demás quietas.", tc: "En numéricas: cambio en USD por +1 SD (ej. child_count +$10.31). En dummies: USD al valer 1 (ej. Women +$90.94, TOM FORD +$85.68)." },
+    { t: "SVD (Solución analítica cerrada)", s: "Fórmula matemática directa que halla las 101 cifras de la Regresión Lineal en un solo cálculo, sin épocas.", tc: "Descomposición en valores singulares de Scikit-Learn LinearRegression.fit() en ~0.05–0.07 s." },
+    { t: "batch_size = 32 (Lotes / Mini-batches)", s: "Agrupar los 916 perfumes de entrenamiento en paquetes de 32 para ir ajustando los pesos paso a paso.", tc: "916 ÷ 32 = 29 lotes (actualizaciones de Adam) por época; equilibrio entre estabilidad del gradiente y velocidad." },
+    { t: "Épocas y EPOCHS = 200", s: "1 época es repasar todos los 916 perfumes 1 vez; 200 es el tope máximo por seguridad, pero el freno automático para antes.", tc: "A las 20 épocas aún había underfitting (Val MSE=949.31). 200 da margen holgado para que EarlyStopping corte en la 72." },
+    { t: "EarlyStopping y restore_best_weights=True", s: "Freno inteligente: si pasan 20 épocas sin romper el récord de validación, para y devuelve los pesos de la mejor época (52).", tc: "Evita corte prematuro en época 18 (992.16) y evita heredar el overfitting de las épocas 53–72." },
+    { t: "Importancia por permutación (Pesos NN)", s: "Desordenar al azar una variable y medir cuánto se dispara el error de la Red Neuronal para saber cuánto depende de ella.", tc: "brand_name (+$35.64 RMSE) y tertiary_category (+$19.66) dominan el modelo; child_count (+$5.97) lidera las numéricas." },
+    { t: "Norma L2 de Capa 1 (||W1||₂)", s: "Suma de fuerza de todas las conexiones que salen de una columna hacia las 64 neuronas iniciales.", tc: "Columnas individuales más pesadas: KILIAN Paris (5.37), TOM FORD (4.45), VOLUSPA (3.81), The Phluid Project (3.78)." },
+    { t: "Data Leakage (Fuga de datos)", s: "Cuando el modelo espía pistas del examen o precios derivados antes de tiempo.", tc: "Evitado excluyendo value_price_usd/sale_price_usd y aplicando split 80/20 antes de SimpleImputer, OHE y StandardScaler." },
+    { t: "Train / Validación / Test", s: "Cuaderno de estudio (Train: 916), simulacro interno (Val: 229) y examen secreto final (Test: 287).", tc: "X_test (287 filas) nunca se toca durante el ajuste ni durante EarlyStopping." },
+    { t: "SimpleImputer (Mediana y Moda)", s: "Rellenador de las 397 celdas vacías usando estadísticas aprendidas solo en Train.", tc: "Mediana en numéricas (rating=4.3333, reviews=49.0) y moda en categóricas ('NEST New York', 'Women', 'Perfume')." },
+    { t: "StandardScaler", s: "Pone las 8 numéricas en la misma regla (media 0, tamaño 1) para que loves_count no aplaste a rating.", tc: "z = (x - μ_train) / σ_train. Necesario para que el gradiente de Adam converja suavemente." },
+    { t: "Red Neuronal MLP (8,577 params)", s: "Red secuencial por capas: 100 entradas → 64 neuronas → 32 neuronas → 1 precio.", tc: "6,464 (Dense 64) + 2,080 (Dense 32) + 33 (Dense 1) = 8,577 parámetros entrenables." },
+    { t: "Activación ReLU", s: "Deja pasar señales positivas y apaga negativas, permitiendo que la red aprenda relaciones curvas (no lineales).", tc: "f(x) = max(0, x). Captura interacciones marca × formato que la recta lineal no puede." },
+    { t: "Capa de Salida Lineal", s: "Neurona final sin tope, capaz de devolver cualquier precio continuo en dólares.", tc: "Dense(1, activation='linear') para regresión (Sigmoide y Softmax son para clasificación)." },
+    { t: "Optimizador Adam (lr=0.003)", s: "Algoritmo que actualiza los 8,577 pesos en cada uno de los 29 lotes reduciendo el error cuadrático MSE.", tc: "Gradiente estocástico adaptativo con tasa de aprendizaje 0.003." },
+    { t: "Regularización L2 (0.01) y Dropout (0.10)", s: "Frenos contra la memorización: L2 evita pesos gigantes y Dropout apaga 10% de neuronas al azar al entrenar.", tc: "Mantuvieron la brecha Train-Test R² del MLP en apenas +0.0586." },
+    { t: "MSE, RMSE, MAE y R²", s: "Métricas de regresión para precios continuos (en dólares y % explicado), en lugar de Accuracy/Precision/Recall.", tc: "MLP en Test: MSE=1145.83, RMSE=$33.85 USD, MAE=$21.02 USD, R²=0.7662." },
+    { t: "Baseline Ingenuo", s: "El competidor más básico: predecir siempre el precio promedio de Train ($86.77) para todo perfume.", tc: "Obtuvo Test R²=-0.0012 y RMSE=$70.06 USD; ambos modelos lo superan ampliamente." },
+    { t: "Overfitting (Sobreajuste)", s: "Memorizar los ejemplos de estudio pero fallar al ver productos nuevos en Test.", tc: "Controlado en ambos: OLS brecha -0.0225; MLP brecha +0.0586." },
+    { t: "Semilla 412 y Determinismo", s: "Número fijo para que la partición y el entrenamiento den siempre resultados idénticos.", tc: "random_state=412 + set_random_seed(412) + enable_op_determinism() dentro de evaluar_red_neuronal." },
+    { t: "importlib.import_module", s: "Permite importar en Python scripts cuyo nombre empieza por número (2_modelo_clasico.py).", tc: "Cumple la estructura 1_ a 4_ del PDF sin causar SyntaxError al importar." }
   ];
 
   const dictGrid = document.getElementById("dictGrid");
@@ -847,7 +1090,7 @@
     dictGrid.innerHTML = filtrados.map(x => `
       <article class="dict-card">
         <h4>${x.t}</h4>
-        <div class="dict-simple"><strong>En sencillo:</strong> ${x.s}</div>
+        <div class="dict-simple"><strong>Para dummies:</strong> ${x.s}</div>
         <div class="dict-tech"><strong>En técnico:</strong> ${x.tc}</div>
       </article>
     `).join("");
@@ -855,30 +1098,33 @@
   dictSearch.addEventListener("input", renderDict);
   renderDict();
 
-  // === BANCO DE 18 PREGUNTAS ===
+  // === BANCO DE 22 PREGUNTAS ===
   const PREGUNTAS = [
-    { id: 1, cat: "Teoría y Métricas", q: "¿Por qué no reportaron Accuracy, Precision, Recall ni F1-Score?", r30: "Porque predecir price_usd es un problema de regresión continua en dólares, no de clasificación por categorías.", tech: "El propio PDF del taller diferencia las métricas: Accuracy/Precision/Recall/F1 para clasificación, y MSE, MAE y R² para regresión. En precios continuos no existe 'acierto exacto' binario sino distancia en USD." },
-    { id: 2, cat: "Teoría y Métricas", q: "¿Por qué la Red Neuronal tiene métricas época por época y la Regresión Lineal no?", r30: "Porque Keras entrena iterativamente con gradiente descendente (Adam), mientras LinearRegression resuelve una ecuación matricial exacta (SVD) en 1 solo paso.", tech: "Por eso 4_comparacion.py imprime las 72 épocas del MLP (mejor época 52: Val MSE=876.19) y para LinearRegression muestra su curva de aprendizaje (20%–100%) probando cómo cae Val RMSE de $40.39 a $33.73 USD al tener más muestras." },
-    { id: 3, cat: "Teoría y Métricas", q: "¿Cuál es la diferencia práctica entre MAE ($21.02) y RMSE ($33.85)?", r30: "MAE es el error promedio simple en dólares; RMSE eleva los errores al cuadrado antes de promediar, así que castiga mucho más los fallos grandes.", tech: "Que el RMSE ($33.85) sea mayor que el MAE ($21.02) indica que la mayoría de predicciones son cercanas, pero existen algunos perfumes de lujo ($250–$395) con errores más grandes." },
-    { id: 4, cat: "Teoría y Métricas", q: "¿Qué significa un R² de 0.7662 y por qué el baseline tiene R² negativo (-0.0012)?", r30: "El MLP explica el 76.62% de la variación de los precios en Test; el baseline predice siempre la media de Train ($86.77), que difiere levemente de la media de Test ($89.23).", tech: "R² = 1 - SS_res / SS_tot. Un modelo constante igual a la media de Train obtiene R² cercano a 0 (ligeramente negativo en Test porque Test no es idéntico a Train)." },
-    { id: 5, cat: "Datos y Preprocesamiento", q: "¿Por qué descartaron el primer sephora.csv y escogieron sephora_fragrance.csv?", r30: "El sephora.csv inicial era un catálogo de tonos sin precios ni variables numéricas y con 38.85% de nulos; Fragrance cumple todas las dimensiones de la rúbrica.", tech: "sephora_fragrance.csv tiene 1,432 filas (1k–5k), 12 variables de entrada (6–15) mezclando 8 numéricas/binarias y 4 categóricas, y 2.13% de nulos reales (2%–5%), sin inventar datos sintéticos." },
-    { id: 6, cat: "Datos y Preprocesamiento", q: "¿Cómo evitaron el data leakage en este proyecto?", r30: "En dos niveles: excluyendo columnas trampa como value_price_usd y dividiendo en Train/Test (80/20) ANTES de imputar, codificar o escalar.", tech: "SimpleImputer (mediana/moda), las categorías del One-Hot Encoding y StandardScaler (μ, σ) se ajustan con fit() únicamente sobre X_train y se aplican con transform() a X_test." },
-    { id: 7, cat: "Datos y Preprocesamiento", q: "¿Qué pasa si en X_test aparece una marca nueva que nunca estuvo en X_train?", r30: "Se codifica automáticamente con ceros en todas las columnas de marca, evitando errores o pérdida de columnas.", tech: "En nuestros datos ocurrió exactamente con brand_name='Eight & Bob' y variation_type='Formulation'. Usamos pd.Categorical(..., categories=train_cats) y reindex(columns=X_train_ohe.columns, fill_value=0)." },
-    { id: 8, cat: "Datos y Preprocesamiento", q: "¿Por qué usaron SimpleImputer con mediana en numéricas y moda en categóricas?", r30: "La mediana resiste valores extremos (como perfumes con miles de reseñas) y la moda es la única estadística central válida para texto categórico.", tech: "En Train se imputó rating con mediana 4.3333, reviews con 49.0, y las categorías con 'NEST New York', 'Women', 'Perfume' y 'Size + Concentration + Formulation'." },
-    { id: 9, cat: "Datos y Preprocesamiento", q: "¿Por qué usaron drop_first=True en One-Hot Encoding y escalaron con StandardScaler?", r30: "drop_first evita columnas redundantes en la Regresión Lineal, y StandardScaler iguala escalas para que variables gigantes como loves_count no dominen a rating.", tech: "Para el MLP, las variables estandarizadas con media 0 y std 1 aceleran y estabilizan la convergencia de Adam; tras escalar, las 8 numéricas en X_train tienen media 0.0 y std(ddof=0)=1.0." },
-    { id: 10, cat: "Código y Arquitectura", q: "¿Por qué eligieron LinearRegression en lugar de Random Forest?", r30: "Por restricción del proyecto y porque con 92 columnas dummy de 79 marcas y 1,145 filas, OLS generaliza sin overfitting y ofrece coeficientes directos en USD.", tech: "Random Forest fragmentaría los datos en hojas pequeñas y no extrapola bien los precios altos ($300–$395). Además, comparar un modelo lineal puro contra el MLP muestra claramente el aporte de las capas no lineales ReLU." },
-    { id: 11, cat: "Código y Arquitectura", q: "¿Por qué la Red Neuronal tiene arquitectura 64 → 32 → 1 con ReLU y salida linear?", r30: "64 y 32 neuronas comprimen las 100 entradas en representaciones no lineales (ReLU) sin sobreajustar un dataset de 1,145 filas, y salida linear entrega USD continuos.", tech: "Tiene 8,577 parámetros totales. Una red más grande (ej. 128-64-32 probada en validación interna) obtuvo peor Val RMSE ($31.58 vs $29.60)." },
-    { id: 12, cat: "Código y Arquitectura", q: "¿Para qué sirven L2 (0.01), Dropout (0.10) y EarlyStopping (patience=20)?", r30: "Son tres capas de protección contra el sobreajuste: L2 frena pesos extremos, Dropout evita memorización y EarlyStopping detiene en el mejor punto de validación.", tech: "Sin regularización sobre 100 columnas para 916 muestras internas de entrenamiento, la red memorizaría marcas pequeñas. Con ellos, la brecha Train-Test R² quedó en apenas +0.0586." },
-    { id: 13, cat: "Código y Arquitectura", q: "¿Por qué fijaron set_random_seed(412) dentro de evaluar_red_neuronal() y no solo arriba?", r30: "Para que si 4_comparacion.py importa la función en un flujo distinto, la inicialización de pesos y el Dropout sean siempre 100% reproducibles.", tech: "Combinado con tf.config.experimental.enable_op_determinism(), verificamos en pruebas que dos llamadas seguidas dan max(|y1 - y2|) = 0.00000000." },
-    { id: 14, cat: "Código y Arquitectura", q: "¿Cuál es la diferencia entre Train loss, Val loss y el Test final?", r30: "Train loss mide el error sobre el 80% interno con el que aprende; Val loss vigila el 20% interno para parar EarlyStopping; Test mide el examen final en X_test.", tech: "En la mejor época 52: Train MSE=701.66, Val MSE=876.19 (Val MAE=$18.59). Luego al evaluar el modelo restaurado sobre el conjunto no visto X_test dio MSE=1145.83 y MAE=$21.02." },
-    { id: 15, cat: "Código y Arquitectura", q: "¿Por qué 4_comparacion.py usa importlib.import_module?", r30: "Porque en Python los nombres de archivo que empiezan por dígito (2_modelo_clasico.py) son inválidos en un import normal.", tech: "El taller exige nomenclatura numérica 1_ a 4_; importlib.import_module('2_modelo_clasico') cumple la estructura exacta sin renombrar scripts." },
-    { id: 16, cat: "Negocio y Comparativa", q: "¿Por qué ganó la Red Neuronal MLP si la Regresión Lineal ya era buena?", r30: "Porque el precio en perfumería no es solo suma lineal: el impacto de cambiar de formato depende de la marca, y las capas ReLU capturan esas interacciones.", tech: "El MLP redujo el MAE en -$3.74 USD (-15.09%), bajó el MSE en -13.53%, subió el R² de 0.7297 a 0.7662 y eliminó las 8 predicciones negativas que produjo LinearRegression." },
-    { id: 17, cat: "Negocio y Comparativa", q: "¿Por qué la Regresión Lineal predijo precios negativos en 8 productos?", r30: "Porque es una recta sin piso mínimo: si se juntan coeficientes muy negativos de marca económica + tipo de variación, la suma cae debajo de cero.", tech: "El mínimo predicho por OLS fue -$9.88 USD. En cambio, la combinación no lineal del MLP predijo siempre precios coherentes entre $17.41 y $302.20 USD." },
-    { id: 18, cat: "Negocio y Comparativa", q: "Si tuvieran que elegir un modelo para producción mañana, ¿cuál usarían y qué mejorarían?", r30: "Usaríamos la Red Neuronal para cotizar precios con mayor precisión y la Regresión Lineal para explicar a gerencia cuánto aporta cada marca; mejoraríamos extrayendo el volumen en mL/oz.", tech: "Añadir el volumen numérico extraído de 'size' y aplicar log(loves_count) resolvería la principal fuente de error restante entre tamaños de frasco de una misma línea." },
-    { id: 19, cat: "Código y Arquitectura", q: "Si la mejor época fue la 52, ¿por qué siguió entrenando hasta la 72? ¿No se quedó con el overfitting de la época 72?", r30: "La época 52 tuvo el menor val_loss (876.19); EarlyStopping esperó 20 épocas (patience=20) hasta la 72 por si volvía a mejorar y restore_best_weights=True restauró automáticamente los pesos de la época 52.", tech: "np.argmin(val_loss_h)+1 detecta el mínimo en validación interna. Como con Adam+Dropout val_loss oscila (45: 881.01 -> 49: 923.75 -> 52: 876.19), cortar al primer rebote (patience=1) habría detenido en la época 18 (992.16). Con patience=20 y restore_best_weights=True se evita tanto el corte prematuro como el overfitting posterior sin fijar epochs=52 a mano." }
+    { id: 1, cat: "Preprocesamiento y Datos", q: "¿De dónde salen exactamente las 92 columnas dummy (100 en total) y por qué son tantas?", r30: "Salen de convertir nuestras 4 columnas de texto a 0 y 1 con drop_first=True; 77 de las 92 columnas (el 83.7%) provienen solo de brand_name porque Train tiene 78 marcas distintas.", tech: "Desglose exacto aprendido de X_train: brand_name (78→77 dummies, ref '19-69') + secondary_category (5→4, ref 'Candles & Home Scents') + tertiary_category (8→7, ref 'Body Mist & Hair Mist') + variation_type (5→4, ref 'Color') = 92 dummies + 8 numéricas escaladas = 100 columnas." },
+    { id: 2, cat: "Preprocesamiento y Datos", q: "¿Por qué partieron el dataset 80/20 ANTES de imputar y escalar?", r30: "Para evitar fuga de datos (data leakage): las medianas, modas, categorías y desviaciones estándar deben aprenderse únicamente de los 1,145 perfumes de estudio sin espiar X_test.", tech: "SimpleImputer, pd.Categorical y StandardScaler se ajustan con fit() sobre X_train y se aplican con transform() a X_test. Las categorías exclusivas de Test ('Eight & Bob' y 'Formulation') quedan en 0 sin error." },
+    { id: 3, cat: "Preprocesamiento y Datos", q: "¿Por qué usaron SimpleImputer con mediana en numéricas y moda en categóricas?", r30: "Porque la mediana no se distorsiona con perfumes virales de miles de reseñas, y la moda es la única medida central válida para texto.", tech: "En Train se imputaron los 397 huecos usando rating=4.3333, reviews=49.0, y las modas 'NEST New York', 'Women', 'Perfume' y 'Size + Concentration + Formulation'." },
+    { id: 4, cat: "Preprocesamiento y Datos", q: "¿Para qué sirven drop_first=True y StandardScaler?", r30: "drop_first quita 1 columna sobrante por categoría para evitar datos repetidos en Regresión Lineal; StandardScaler iguala escalas para que loves_count (hasta 276 mil) no aplaste a rating (1–5).", tech: "drop_first=True evita multicolinealidad perfecta (trampa de las variables dummy); StandardScaler centra en media=0 y std(ddof=0)=1 en Train." },
+    { id: 5, cat: "Preprocesamiento y Datos", q: "¿Por qué descartaron el primer sephora.csv y eligieron sephora_fragrance.csv?", r30: "El sephora.csv inicial era un catálogo de tonos sin precios ni números (y 38.85% de nulos); sephora_fragrance.csv cumple al 100% todos los criterios del taller.", tech: "Tiene 1,432 filas (1k–5k), 12 variables mixtas (6–15), 2.13% de nulos reales (2%–5%), 0 nulos en price_usd y sin precios derivados (value_price_usd)." },
+    { id: 6, cat: "Regresión Lineal", q: "¿Qué variables usa la Regresión Lineal, qué es el intercepto (+$43.76) y cuáles son sus pendientes principales?", r30: "Usa las 100 columnas: 1 intercepto base (+$43.76 USD) y 100 pendientes parciales. En numéricas lidera child_count (+$10.31 por +1 SD); en categorías lideran Diffusers (+$99.77), Women (+$90.94) y TOM FORD (+$85.68).", tech: "ŷ = 43.76 + Σ βᵢxᵢ. El intercepto es el precio esperado cuando las 8 numéricas están en su media (z=0) y aplican las 4 categorías de referencia. Para la Muestra 0 ('19-69'), +43.76 +19.52 (numéricas) +94.47 (dummies) = $157.75 USD exactos." },
+    { id: 7, cat: "Regresión Lineal", q: "¿Por qué la Regresión Lineal no tiene épocas y muestra una curva de aprendizaje (20%–100%)?", r30: "Porque LinearRegression halla las 101 cifras óptimas en 1 solo paso matricial cerrado (SVD), sin iterar; por eso medimos cómo mejora al recibir más datos.", tech: "En el holdout interno del 20%, al subir el sub-entrenamiento de 20% (183) a 100% (916 muestras), Val RMSE bajó de $40.39 a $33.73 USD y Val R² subió de 0.5855 a 0.7110." },
+    { id: 8, cat: "Regresión Lineal", q: "¿Por qué la Regresión Lineal predijo precios negativos en 8 productos de Test?", r30: "Porque es una suma lineal sin tope inferior: al juntarse varias pendientes negativas fuertes de marca económica y variación, la suma baja de cero (mín. -$9.88 USD).", tech: "Un modelo lineal irrestricto extrapola libremente; en contraste, las capas ReLU de la Red Neuronal produjeron 0 predicciones negativas (mín. $17.41 USD)." },
+    { id: 9, cat: "Regresión Lineal", q: "¿Por qué usaron Regresión Lineal Múltiple y no Random Forest?", r30: "Por restricción del proyecto y porque con 92 columnas dummy para 1,145 filas, OLS generaliza sin overfitting (Test R²=0.7297) y da coeficientes interpretables en dólares.", tech: "Random Forest fragmenta 77 marcas en hojas pequeñas y comprime precios extremos ($300–$395). Además, contrastar OLS lineal vs. MLP no lineal hace muy clara la evaluación." },
+    { id: 10, cat: "Red Neuronal", q: "¿Qué variables toman MÁS PESO en la Red Neuronal y cómo lo comprobaron?", r30: "Mediante importancia por permutación sobre X_test: brand_name domina ampliamente (+$35.64 al RMSE si se desordena), seguida de tertiary_category (+$19.66) y child_count (+$5.97).", tech: "En la Capa 1 (||W1||₂, 100→64), las columnas individuales más influyentes son brand_name_KILIAN Paris (5.37), TOM FORD (4.45), VOLUSPA (3.81), The Phluid Project (3.78) y Rollerballs & Travel Size (3.72). rating, reviews y loves_count aportan poco individualmente." },
+    { id: 11, cat: "Red Neuronal", q: "¿Especificaron lotes en la Red Neuronal? ¿Cuántos y de qué tamaño?", r30: "Sí: batch_size = 32. Como de las 1,145 filas de Train se aparta el 20% (229) para validación, quedan 916 perfumes que se procesan en 29 lotes de 32 por cada época.", tech: "916 ÷ 32 = 28 lotes completos + 1 lote final de 20 = 29 actualizaciones de pesos por Adam en cada época (2,088 actualizaciones totales en 72 épocas)." },
+    { id: 12, cat: "Red Neuronal", q: "¿Por qué decidieron poner 200 épocas en el código si solo corrió 72?", r30: "200 es un techo máximo de seguridad para que la red no se quede corta aprendiendo (a las 20 épocas aún tenía error alto); sabíamos que EarlyStopping la frenaría automáticamente cuando convergiera.", tech: "En época 1 Val MSE=9301.32; en época 20 Val MSE=949.31; en época 52 alcanzó el mínimo de 876.19. Sin 200 de margen habría riesgo de underfitting." },
+    { id: 13, cat: "Red Neuronal", q: "Si la mejor época fue la 52, ¿por qué corrió hasta la 72? ¿No heredó el overfitting de la 72?", r30: "EarlyStopping esperó 20 épocas (patience=20) desde la 52 hasta la 72 por si volvía a mejorar, y al parar, restore_best_weights=True restauró exactamente los pesos de la época 52.", tech: "En la 52 Val MSE=876.19 (Val MAE=$18.59). Como la curva oscila (45: 881.01 → 49: 923.75 → 52: 876.19), patience=1 habría cortado en la época 18 (992.16). Con restore_best_weights=True se descartan las épocas 53–72." },
+    { id: 14, cat: "Red Neuronal", q: "¿Por qué la Red Neuronal tiene arquitectura 100 → 64 → 32 → 1 (8,577 parámetros) con ReLU y salida linear?", r30: "64 y 32 neuronas comprimen las 100 entradas capturando interacciones no lineales (ReLU) sin sobreajustar 916 filas, y la salida linear entrega precios continuos en dólares.", tech: "Desglose de parámetros: 100×64+64=6,464 + 64×32+32=2,080 + 32×1+1=33 = 8,577. Una red más grande (128-64-32) dio peor Val RMSE ($31.58 vs $29.60)." },
+    { id: 15, cat: "Red Neuronal", q: "¿Para qué sirven L2 (0.01) y Dropout (0.10) dentro de la red?", r30: "Son frenos contra la memorización: L2 penaliza pesos extremos y Dropout apaga 10% de neuronas al azar al entrenar para que no dependan unas de otras.", tech: "Con 100 entradas frente a 916 ejemplos, sin regularización memorizaría marcas pequeñas. Gracias a ambos + EarlyStopping, la brecha Train-Test R² quedó en +0.0586." },
+    { id: 16, cat: "Red Neuronal", q: "¿Por qué fijaron set_random_seed(412) dentro de evaluar_red_neuronal()?", r30: "Para que cada vez que se ejecute o se importe desde 4_comparacion.py, la inicialización de pesos y el Dropout produzcan exactamente el mismo resultado.", tech: "Con tf.config.experimental.enable_op_determinism(), verificamos en pruebas que dos llamadas seguidas tienen diferencia máxima de 0.00000000." },
+    { id: 17, cat: "Métricas y Comparativa", q: "¿Por qué usaron MSE, RMSE, MAE y R² y NO Accuracy, Precision o Recall?", r30: "Porque predecir price_usd es un problema de regresión continua (error medido en dólares), mientras Accuracy, Precision, Recall y F1 son exclusivos de clasificación.", tech: "En regresión importa qué tan lejos en USD cayó la predicción (MAE=$21.02, RMSE=$33.85) y cuánta varianza del precio explica el modelo (R²=0.7662)." },
+    { id: 18, cat: "Métricas y Comparativa", q: "¿Cuál es la diferencia práctica entre MAE ($21.02) y RMSE ($33.85)?", r30: "MAE es el promedio simple de error en dólares; RMSE eleva los errores al cuadrado antes de promediar, castigando más fuerte los errores grandes en perfumes caros.", tech: "Que RMSE ($33.85) supere a MAE ($21.02) refleja que la mayoría de predicciones son cercanas, pero existen algunos artículos de lujo ($250–$395) con residuos mayores." },
+    { id: 19, cat: "Métricas y Comparativa", q: "¿Cuál es la diferencia entre Train loss, Val loss (876.19) y el Test final (1145.83)?", r30: "Train mide los 916 perfumes que estudia; Val vigila los 229 apartados para frenar EarlyStopping en la época 52; Test es el examen final sobre los 287 perfumes nunca vistos.", tech: "Nunca deben mezclarse cifras de validación (Val MSE=876.19, Val MAE=$18.59) con el resultado final sobre X_test (Test MSE=1145.83, Test MAE=$21.02, Test R²=0.7662)." },
+    { id: 20, cat: "Métricas y Comparativa", q: "¿Por qué el Baseline ingenuo tiene R² negativo (-0.0012)?", r30: "Porque predice siempre la media de Train ($86.77 USD), y en Test la media real es ligeramente distinta ($89.23 USD).", tech: "R² = 1 - SS_res / SS_tot. Un modelo constante que no acierta exactamente la media de Test obtiene R² ligeramente menor a 0." },
+    { id: 21, cat: "Métricas y Comparativa", q: "¿Por qué ganó la Red Neuronal MLP sobre la Regresión Lineal?", r30: "Porque en perfumería el efecto de cambiar de tamaño o categoría depende de la marca (no linealidad), y el MLP redujo el MAE en 15.09% y eliminó las 8 predicciones negativas.", tech: "MLP vs OLS en Test: R² 0.7662 vs 0.7297 (+0.0366), MAE $21.02 vs $24.76 (-$3.74), RMSE $33.85 vs $36.40, MSE 1145.83 vs 1325.13 (-13.53%)." },
+    { id: 22, cat: "Métricas y Comparativa", q: "¿Por qué 4_comparacion.py usa importlib y cuál es el compromiso (trade-off) de ambos modelos?", r30: "importlib permite importar archivos que empiezan por número (2_, 3_); el trade-off es velocidad e interpretabilidad directa (OLS, 0.05 s) vs. mayor precisión predictiva (MLP, ~11 s).", tech: "Para explicar a gerencia cuánto suma una marca, LinearRegression es ideal; para cotizar precios con menor error y sin negativos, la Red Neuronal es superior. Futuro: extraer volumen numérico en mL/oz." }
   ];
 
-  const STORAGE_KEY = "charlie_neural_guia_q_v1";
+  const STORAGE_KEY = "charlie_neural_guia_q_v2";
   let mastered = {};
   try {
     mastered = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
