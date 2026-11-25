@@ -44,22 +44,24 @@
 - **Verificación / Tests:**
   - [x] Importación real de `pandas`, `scikit-learn` y `tensorflow` en `.venv\Scripts\python.exe` con exit code `0`.
   - [x] Auditoría con `assert` sobre `datos/sephora_fragrance.csv`: dimensiones `(1432, 13)`, 8 numéricas + 4 categóricas, `0` nulos en `price_usd`, nulos reales en numéricas (`186`) y categóricas (`211`), porcentaje global `2.13%` (`2.31%` en `X`) dentro de `[2%, 5%]`, sin columnas ID ni de fuga de datos.
-  - [ ] Confirmación del usuario sobre pregunta de negocio, modelo clásico elegido (sin Random Forest) y paso a Fase 1.
+  - [x] Confirmación del usuario sobre pregunta de negocio, modelo clásico elegido (sin Random Forest) y paso a Fase 1:
+    - **Pregunta de negocio aprobada:** *«¿Con qué precisión se puede predecir el precio en USD (`price_usd`) de una fragancia en Sephora según su marca, subcategoría, tipo de variación, popularidad y atributos comerciales?»*
+    - **Modelo clásico elegido:** Regresión Lineal Múltiple (`LinearRegression`, Scikit-Learn; sin Random Forest).
 
 ---
 
-### Fase 1: Preprocesamiento (`1_preprocesamiento.py`) ⏳
+### Fase 1: Preprocesamiento (`1_preprocesamiento.py`) ✅
 - **Implementación:**
-  - [ ] Cargar `datos/sephora_fragrance.csv` validando ausencia de IDs o fuga de datos.
-  - [ ] Separar `X` (12 variables) e `y = price_usd` (continua para regresión) e imprimir resumen de variables y rango de `y`.
-  - [ ] Dividir en 80% Train / 20% Test con `random_state=412` **antes** de imputar, codificar o escalar (sin data leakage).
-  - [ ] Aplicar `SimpleImputer`: `strategy="median"` para numéricas y `strategy="most_frequent"` (moda) para categóricas, ajustado **solo** sobre `X_train`.
-  - [ ] Aplicar One-Hot Encoding consistente a categóricas (`pd.Categorical` con categorías aprendidas en Train + `pd.get_dummies(..., drop_first=True, dtype=int)` + `reindex` para garantizar mismas columnas y tipo numérico en Pandas 3.x / TensorFlow).
-  - [ ] Aplicar `StandardScaler` a las variables numéricas ajustado **solo** sobre `X_train`.
-  - [ ] Exportar `datos/X_train.csv`, `datos/X_test.csv`, `datos/y_train.csv` y `datos/y_test.csv`.
+  - [x] Cargar `datos/sephora_fragrance.csv` validando ausencia de IDs o fuga de datos (`0` columnas excluidas en carga al estar ya limpio el archivo).
+  - [x] Separar `X` (12 variables) e `y = price_usd` (regresión continua, sin mapeo de clases) e imprimir resumen de variables y rango de `y`.
+  - [x] Dividir en 80% Train / 20% Test (`1,145` / `287` registros) con `random_state=412` **antes** de imputar, codificar o escalar (sin *data leakage*).
+  - [x] Aplicar `SimpleImputer`: `strategy="median"` para numéricas (`rating=4.3333`, `reviews=49.0`) y `strategy="most_frequent"` (moda) para categóricas (`secondary_category="Women"`, `tertiary_category="Perfume"`, `variation_type="Size + Concentration + Formulation"`), ajustado **solo** sobre `X_train`.
+  - [x] Aplicar One-Hot Encoding consistente a categóricas (`pd.Categorical` con categorías aprendidas en Train + `pd.get_dummies(..., drop_first=True, dtype=int)` + `reindex`), generando `92` columnas dummy sin warnings en Pandas 3.1.1 (2 categorías no vistas en Test —`brand_name: 'Eight & Bob'` y `variation_type: 'Formulation'`— codificadas limpiamente en 0).
+  - [x] Aplicar `StandardScaler` a las 8 variables numéricas ajustado **solo** sobre `X_train`.
+  - [x] Exportar `datos/X_train.csv`, `datos/X_test.csv`, `datos/y_train.csv` y `datos/y_test.csv`.
 - **Tests obligatorios Fase 1:**
-  - [ ] Ejecutar `1_preprocesamiento.py` con exit code `0`.
-  - [ ] Script de `assert` verificando: existencia de los 4 CSVs, partición 80/20 exacta (`1145` train / `287` test), `0` NaNs en los 4 archivos, columnas idénticas y 100% numéricas en `X_train` y `X_test`, media `~0` y desviación estándar `~1` en columnas numéricas escaladas de `X_train`, y distribución válida de `y_train` e `y_test`.
+  - [x] Ejecutar `1_preprocesamiento.py` con exit code `0` y `0` warnings.
+  - [x] Script de `assert` verificado: existencia de los 4 CSVs, partición 80/20 exacta (`1,145 × 100` train / `287 × 100` test), `0` NaNs e infinitos en los 4 archivos, columnas idénticas y 100% numéricas (`float32`), media `~0.0` y `std(ddof=0) = 1.00000000` en las 8 numéricas de `X_train`, dummies en `{0, 1}`, distribución válida de `y` (`y_train` media `86.77`, `y_test` media `89.23` USD) y determinismo exacto verificado por SHA256 en dos ejecuciones consecutivas.
 
 ---
 
@@ -121,6 +123,7 @@
   - [ ] Verificar que haya `0` archivos `.ipynb` en todo el proyecto.
   - [ ] Construir archivo `.zip` limpio con carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` e informe/presentación si aplica), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md` y `GUIA_SUSTENTACION.html`.
   - [ ] Crear `GUIA_SUSTENTACION.html` autocontenida, didáctica e interactiva (con diagramas, guion para sustentación en pareja de 5–8 min con placeholders *Integrante A* / *Integrante B*, diccionario técnico y banco interactivo de preguntas de código y teoría).
+  - [ ] Incluir explícitamente en `GUIA_SUSTENTACION.html` la justificación completa de selección del dataset (descarte del CSV previo sin precios, cumplimiento de la rúbrica PDF y prevención de *data leakage*) y el análisis imparcial de **Regresión Lineal Múltiple (`LinearRegression`) vs. Random Forest** (estructura aditiva, alta cardinalidad *one-hot*, interpretabilidad en USD, límites ante interacciones no lineales `marca × subcategoría` y contraste con la Red Neuronal).
   - [ ] Actualizar `HOJA_DE_RUTA.md` y mantener historial de commits limpio en `main`.
 - **Verificación (Prueba limpia):**
   - [ ] Descomprimir el `.zip` en una carpeta temporal fuera del workspace y ejecutar `python 4_comparacion.py` desde cero verificando exit code `0` y resultados reproducibles.
