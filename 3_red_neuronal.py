@@ -236,6 +236,35 @@ def evaluar_red_neuronal(verbose: bool = True) -> dict[str, object]:
     metricas_test = _calcular_metricas(y_true_test, y_pred_test)
     metricas_baseline = _calcular_metricas(y_true_test, y_pred_baseline)
 
+    epocas_detalle: list[dict[str, object]] = []
+    loss_h = history.history["loss"]
+    mae_h = history.history["mae"]
+    val_loss_h = history.history["val_loss"]
+    val_mae_h = history.history["val_mae"]
+    mejor_epoca = int(np.argmin(val_loss_h)) + 1
+    for idx in range(len(loss_h)):
+        epocas_detalle.append(
+            {
+                "epoca": idx + 1,
+                "train_mse": float(loss_h[idx]),
+                "train_rmse": float(np.sqrt(max(float(loss_h[idx]), 0.0))),
+                "train_mae": float(mae_h[idx]),
+                "val_mse": float(val_loss_h[idx]),
+                "val_rmse": float(np.sqrt(max(float(val_loss_h[idx]), 0.0))),
+                "val_mae": float(val_mae_h[idx]),
+                "es_mejor": (idx + 1) == mejor_epoca,
+            }
+        )
+
+    historial_aprendizaje = {
+        "tipo_entrenamiento": (
+            "Descenso de gradiente iterativo por épocas (Adam + EarlyStopping)"
+        ),
+        "epocas_ejecutadas": len(loss_h),
+        "mejor_epoca": mejor_epoca,
+        "registros": epocas_detalle,
+    }
+
     if verbose:
         _imprimir_reporte(
             X_train=X_train,
@@ -262,6 +291,7 @@ def evaluar_red_neuronal(verbose: bool = True) -> dict[str, object]:
         "train_r2": metricas_train["r2"],
         "y_pred": y_pred_test,
         "tiempo_entrenamiento": tiempo_entrenamiento,
+        "historial_aprendizaje": historial_aprendizaje,
     }
 
 

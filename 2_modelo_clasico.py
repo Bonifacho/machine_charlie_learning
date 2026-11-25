@@ -63,6 +63,49 @@ def _calcular_metricas(y_real: np.ndarray, y_pred: np.ndarray) -> dict[str, floa
     }
 
 
+def _calcular_curva_aprendizaje(
+    X_train: pd.DataFrame, y_train: np.ndarray, val_split: float = 0.20
+) -> dict[str, object]:
+    """Evalúa curva de aprendizaje sobre el mismo holdout interno usado en Keras."""
+    n_val = int(len(X_train) * val_split)
+    X_sub = X_train.iloc[:-n_val]
+    y_sub = y_train[:-n_val]
+    X_val = X_train.iloc[-n_val:]
+    y_val = y_train[-n_val:]
+
+    registros: list[dict[str, float | int]] = []
+    for fraccion in (0.20, 0.40, 0.60, 0.80, 1.00):
+        n_muestras = max(1, int(len(X_sub) * fraccion))
+        modelo_parcial = LinearRegression()
+        modelo_parcial.fit(X_sub.iloc[:n_muestras], y_sub[:n_muestras])
+
+        m_tr = _calcular_metricas(
+            y_sub[:n_muestras], modelo_parcial.predict(X_sub.iloc[:n_muestras])
+        )
+        m_val = _calcular_metricas(y_val, modelo_parcial.predict(X_val))
+        registros.append(
+            {
+                "fraccion": float(fraccion),
+                "n_muestras": n_muestras,
+                "train_mse": m_tr["mse"],
+                "train_rmse": m_tr["rmse"],
+                "train_mae": m_tr["mae"],
+                "train_r2": m_tr["r2"],
+                "val_mse": m_val["mse"],
+                "val_rmse": m_val["rmse"],
+                "val_mae": m_val["mae"],
+                "val_r2": m_val["r2"],
+            }
+        )
+
+    return {
+        "tipo_entrenamiento": (
+            "Solución analítica cerrada (Mínimos Cuadrados / SVD en 1 paso, sin épocas)"
+        ),
+        "registros": registros,
+    }
+
+
 def _imprimir_reporte(
     X_train: pd.DataFrame,
     X_test: pd.DataFrame,
@@ -72,6 +115,7 @@ def _imprimir_reporte(
     metricas_train: dict[str, float],
     metricas_test: dict[str, float],
     metricas_baseline: dict[str, float],
+    historial_aprendizaje: dict[str, object],
     tiempo_entrenamiento: float,
 ) -> None:
     """Imprime en consola el análisis completo de desempeño e interpretación."""
@@ -84,6 +128,19 @@ def _imprimir_reporte(
     print("=" * 72)
     print(f"Entrenamiento: {X_train.shape[0]} muestras x {X_train.shape[1]} variables")
     print(f"Prueba (Test): {X_test.shape[0]} muestras x {X_test.shape[1]} variables")
+
+    print("\nCurva de aprendizaje (LinearRegression resuelve óptimo global en 1 paso analítico):")
+    print(
+        f"  {'Sub-train':>10} {'Train RMSE':>12} {'Val MSE':>10} "
+        f"{'Val RMSE':>10} {'Val MAE':>10} {'Val R²':>9}"
+    )
+    print("  " + "-" * 65)
+    for reg in historial_aprendizaje["registros"]:
+        print(
+            f"  {int(reg['fraccion']*100):>3d}% ({reg['n_muestras']:>3d}) "
+            f"{reg['train_rmse']:>12.2f} {reg['val_mse']:>10.2f} "
+            f"{reg['val_rmse']:>10.2f} {reg['val_mae']:>10.2f} {reg['val_r2']:>9.4f}"
+        )
 
     print(
         f"\nBaseline ingenuo (predecir media de Train = {y_train.mean():.2f} USD):"
@@ -150,6 +207,7 @@ def evaluar_modelo_clasico(verbose: bool = True) -> dict[str, object]:
     metricas_train = _calcular_metricas(y_train, y_pred_train)
     metricas_test = _calcular_metricas(y_test, y_pred_test)
     metricas_baseline = _calcular_metricas(y_test, y_pred_baseline)
+    historial_aprendizaje = _calcular_curva_aprendizaje(X_train, y_train)
 
     if verbose:
         _imprimir_reporte(
@@ -161,6 +219,7 @@ def evaluar_modelo_clasico(verbose: bool = True) -> dict[str, object]:
             metricas_train=metricas_train,
             metricas_test=metricas_test,
             metricas_baseline=metricas_baseline,
+            historial_aprendizaje=historial_aprendizaje,
             tiempo_entrenamiento=tiempo_entrenamiento,
         )
 
@@ -176,6 +235,7 @@ def evaluar_modelo_clasico(verbose: bool = True) -> dict[str, object]:
         "train_r2": metricas_train["r2"],
         "y_pred": y_pred_test,
         "tiempo_entrenamiento": tiempo_entrenamiento,
+        "historial_aprendizaje": historial_aprendizaje,
     }
 
 

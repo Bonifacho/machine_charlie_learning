@@ -69,7 +69,7 @@
 - **Implementación:**
   - [x] Cargar `datos/X_train.csv`, `datos/X_test.csv`, `datos/y_train.csv`, `datos/y_test.csv`.
   - [x] Instanciar y entrenar el modelo clásico acordado: `LinearRegression` (Regresión Lineal Múltiple, sin Random Forest) en `0.1000` s.
-  - [x] Exponer `evaluar_modelo_clasico(verbose=True)` retornando diccionario estándar (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`) y mantener bloque `if __name__ == "__main__":`.
+  - [x] Exponer `evaluar_modelo_clasico(verbose=True)` retornando diccionario estándar de 12 llaves (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`, `historial_aprendizaje` con curva de aprendizaje 20%–100% en holdout interno) y mantener bloque `if __name__ == "__main__":`.
   - [x] Imprimir control de overfitting (Train vs. Test), comparación contra baseline ingenuo e interpretación del modelo (intercepto `β0 = +43.76` USD y Top 8 coeficientes positivos/negativos en USD).
 - **Tests obligatorios Fase 2:**
   - [x] Ejecución directa con exit code `0` y `0` warnings.
@@ -87,9 +87,9 @@
   - [x] Fijar `tf.keras.utils.set_random_seed(412)` **dentro** de `evaluar_red_neuronal(verbose=True)` (y `enable_op_determinism()` en `entrenar_red_neuronal`) para garantizar determinismo también al importarse desde `4_comparacion.py`.
   - [x] Definir modelo `Sequential`: `Input(100) -> Dense(64, ReLU, L2=0.01) -> Dropout(0.10) -> Dense(32, ReLU, L2=0.01) -> Dropout(0.10) -> Dense(1, linear)` (`8,577` parámetros), optimizador `Adam(lr=0.003)` y pérdida `mse`.
   - [x] Entrenar monitoreando `validation_split=0.2` con `EarlyStopping(patience=20)` (sin tocar `X_test`): `72/200` épocas ejecutadas, mejor época `52`, tiempo `10.4251` s.
-  - [x] Retornar exactamente las mismas 11 llaves que `2_modelo_clasico.py` (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`) y mantener `if __name__ == "__main__":`.
+  - [x] Retornar exactamente las mismas 12 llaves que `2_modelo_clasico.py` (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`, `historial_aprendizaje` con detalle época por época `1..72`) y mantener `if __name__ == "__main__":`.
 - **Tests obligatorios Fase 3:**
-  - [x] Forma, contrato de 11 llaves y rango válidos de salida (`shape=(287,)`, sin `NaN`/`Inf`, min `17.41`, mediana `77.13`, max `302.20` USD, `0` predicciones negativas).
+  - [x] Forma, contrato de 12 llaves y rango válidos de salida (`shape=(287,)`, sin `NaN`/`Inf`, min `17.41`, mediana `77.13`, max `302.20` USD, `0` predicciones negativas).
   - [x] Convergencia real sin `NaN`: `loss` baja de `10519.08` (época 1) a `701.66` (época 52); `val_loss` baja de `9301.32` a `876.19` (`val_mae = 18.59` USD).
   - [x] Determinismo exacto en dos llamadas consecutivas a `evaluar_red_neuronal(verbose=False)` (`max(|y1 - y2|) = 0.00000000`).
   - [x] Superación del baseline ingenuo (`R² = -0.0012`) y brecha controlada en Test: Train (`MSE = 661.96`, `RMSE = 25.73` USD, `MAE = 15.77` USD, `R² = 0.8248`) vs. Test (`MSE = 1145.8261`, `RMSE = 33.8501` USD, `MAE = 21.0231` USD, `R² = 0.7662`, brecha `+0.0586`).
@@ -97,15 +97,15 @@
 
 ---
 
-### Fase 4: Comparación Final (`4_comparacion.py`) ⏳
+### Fase 4: Comparación Final (`4_comparacion.py`) ✅
 - **Implementación:**
-  - [ ] Configurar `os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")` al inicio del script.
-  - [ ] Importar `2_modelo_clasico` y `3_red_neuronal` mediante `importlib.import_module`.
-  - [ ] Evaluar ambos modelos sobre el mismo conjunto `X_test` / `y_test`.
-  - [ ] Imprimir tabla comparativa limpia lado a lado (`MSE`, `RMSE`, `MAE`, `R²`, `Tiempo`) y conclusión técnica justificada sobre cuál modelo obtuvo mejor desempeño.
+  - [x] Configurar `os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")` y `TF_ENABLE_ONEDNN_OPTS=0` al inicio del script.
+  - [x] Importar `2_modelo_clasico` y `3_red_neuronal` mediante `importlib.import_module`.
+  - [x] Evaluar ambos modelos sobre el mismo conjunto `X_test` / `y_test` (`287 × 100`) y verificar independientemente que todas las métricas coincidan con `sklearn.metrics`.
+  - [x] Imprimir evolución época por época (`1..72`) de la Red Neuronal MLP, curva de aprendizaje (`20%..100%`) de `LinearRegression`, cuadro comparativo lado a lado y conclusión técnica justificada.
 - **Tests obligatorios Fase 4 (End-to-End):**
-  - [ ] Ejecutar en secuencia `1_preprocesamiento.py` -> `2_modelo_clasico.py` -> `3_red_neuronal.py` -> `4_comparacion.py` con exit code `0`.
-  - [ ] Verificar coincidencia exacta de métricas entre las ejecuciones individuales y `4_comparacion.py`.
+  - [x] Ejecutar en secuencia `1_preprocesamiento.py` -> `2_modelo_clasico.py` -> `3_red_neuronal.py` -> `4_comparacion.py` todos con exit code `0`.
+  - [x] Verificar coincidencia exacta (`atol=1e-6`) entre ejecuciones individuales y `4_comparacion.py`, contrato de 12 llaves, 0 NaNs en historiales y ganador consistente: **Red Neuronal MLP (TensorFlow/Keras)** (`MSE=1145.83`, `RMSE=33.85` USD, `MAE=21.02` USD, `R²=0.7662` vs. `LinearRegression`: `MSE=1325.13`, `RMSE=36.40` USD, `MAE=24.76` USD, `R²=0.7297`; mejora `ΔR²=+0.0366`, `-15.09%` en `MAE`, `-13.53%` en `MSE` y `0` predicciones negativas).
 
 ---
 
@@ -124,6 +124,7 @@
   - [ ] Construir archivo `.zip` limpio con carpeta raíz `proyecto_machine_learning/` conteniendo únicamente los entregables oficiales (`datos/` con los 5 CSVs, `1_` a `4_`, `README.md`, `requirements.txt` e informe/presentación si aplica), excluyendo `.venv/`, `__pycache__/`, `.git/`, `HOJA_DE_RUTA.md` y `GUIA_SUSTENTACION.html`.
   - [ ] Crear `GUIA_SUSTENTACION.html` autocontenida, didáctica e interactiva (con diagramas, guion para sustentación en pareja de 5–8 min con placeholders *Integrante A* / *Integrante B*, diccionario técnico y banco interactivo de preguntas de código y teoría).
   - [ ] Incluir explícitamente en `GUIA_SUSTENTACION.html` la justificación completa de selección del dataset (descarte del CSV previo sin precios, cumplimiento de la rúbrica PDF y prevención de *data leakage*) y el análisis imparcial de **Regresión Lineal Múltiple (`LinearRegression`) vs. Random Forest** (estructura aditiva, alta cardinalidad *one-hot*, interpretabilidad en USD, límites ante interacciones no lineales `marca × subcategoría` y contraste con la Red Neuronal).
+  - [ ] Explicar claramente en `GUIA_SUSTENTACION.html`: (a) por qué en un problema de **regresión** se usan `MSE`, `RMSE`, `MAE` y `R²` en lugar de `Accuracy`, `Precision`, `Recall` y `F1` (exclusivos de clasificación), y (b) por qué la Red Neuronal entrena por **épocas** (`1..72`) mediante descenso de gradiente (`Adam`) mientras `LinearRegression` resuelve en **1 paso analítico cerrado (SVD)** sin épocas y se analiza mediante curva de aprendizaje (`20%..100%`).
   - [ ] Actualizar `HOJA_DE_RUTA.md` y mantener historial de commits limpio en `main`.
 - **Verificación (Prueba limpia):**
   - [ ] Descomprimir el `.zip` en una carpeta temporal fuera del workspace y ejecutar `python 4_comparacion.py` desde cero verificando exit code `0` y resultados reproducibles.
