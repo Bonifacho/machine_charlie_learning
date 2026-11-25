@@ -65,19 +65,19 @@
 
 ---
 
-### Fase 2: Modelo Clásico Scikit-Learn (`2_modelo_clasico.py`, SIN Random Forest) ⏳
+### Fase 2: Modelo Clásico Scikit-Learn (`2_modelo_clasico.py`, SIN Random Forest) ✅
 - **Implementación:**
-  - [ ] Cargar `datos/X_train.csv`, `datos/X_test.csv`, `datos/y_train.csv`, `datos/y_test.csv`.
-  - [ ] Instanciar y entrenar el modelo clásico acordado (sin Random Forest).
-  - [ ] Exponer la función `evaluar_modelo_clasico(verbose=True)` retornando diccionario estándar (`mse`, `rmse`, `mae`, `r2`, `y_pred`, `tiempo_entrenamiento`) y mantener bloque `if __name__ == "__main__":`.
-  - [ ] Imprimir control de overfitting (métricas Train vs Test), interpretación del modelo (coeficientes/pesos más influyentes) y métricas completas en Test.
+  - [x] Cargar `datos/X_train.csv`, `datos/X_test.csv`, `datos/y_train.csv`, `datos/y_test.csv`.
+  - [x] Instanciar y entrenar el modelo clásico acordado: `LinearRegression` (Regresión Lineal Múltiple, sin Random Forest) en `0.1000` s.
+  - [x] Exponer `evaluar_modelo_clasico(verbose=True)` retornando diccionario estándar (`modelo`, `mse`, `rmse`, `mae`, `r2`, `train_*`, `y_pred`, `tiempo_entrenamiento`) y mantener bloque `if __name__ == "__main__":`.
+  - [x] Imprimir control de overfitting (Train vs. Test), comparación contra baseline ingenuo e interpretación del modelo (intercepto `β0 = +43.76` USD y Top 8 coeficientes positivos/negativos en USD).
 - **Tests obligatorios Fase 2:**
-  - [ ] Ejecución con exit code `0` sin warnings críticos.
-  - [ ] Forma y rango válidos de `y_pred` (longitud `287`, sin `NaN`/`Inf`).
-  - [ ] Superación clara del baseline ingenuo (predicción por media de `y_train`).
-  - [ ] Brecha Train/Test controlada (sin sobreajuste severo).
-  - [ ] Determinismo exacto en dos ejecuciones consecutivas.
-  - [ ] Prueba de inferencia individual sobre 1 muestra de `X_test`.
+  - [x] Ejecución directa con exit code `0` y `0` warnings.
+  - [x] Forma y rango válidos de `y_pred` (`shape=(287,)`, sin `NaN`/`Inf`, min `-9.88`, mediana `94.93`, max `247.83` USD; `8` predicciones negativas en combinaciones extremas).
+  - [x] Superación clara del baseline ingenuo (`R² = -0.0012`, `RMSE = 70.06` USD, `MAE = 53.56` USD vs. modelo en Test: `MSE = 1325.1320`, `RMSE = 36.4024` USD, `MAE = 24.7604` USD, `R² = 0.7297`).
+  - [x] Brecha Train/Test controlada: Train (`MSE = 1106.54`, `RMSE = 33.26` USD, `MAE = 21.89` USD, `R² = 0.7072`) vs. Test (`R² = 0.7297`), brecha `Train R² - Test R² = -0.0225` (cero *overfitting*).
+  - [x] Determinismo exacto verificado en dos llamadas consecutivas (`y_pred` y métricas idénticas).
+  - [x] Prueba de inferencia individual sobre la muestra 0 de `X_test`: real `195.00` USD vs. predicho `157.75` USD (error `-37.25` USD).
 
 ---
 
